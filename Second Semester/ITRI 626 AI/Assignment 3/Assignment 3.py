@@ -1,13 +1,17 @@
 def neural_network(input, weights):
     out = 0
     for i in range(len(input)):
-      out += (input[i] * weights[i])
+        tempArray = input[i];
+        for x in range(len(tempArray)):
+            out += (tempArray[x] * weights[i])
     return out
 
 def ele_mul(scalar, vector):
     out = [0,0,0,0]
     for i in range(len(out)):
-      out[i] = vector[i] * scalar
+        tempArray = vector[i];
+        for x in range(len(tempArray)):
+            out[i] = tempArray[i] * scalar
     return out
 
 
@@ -23,10 +27,10 @@ true = win_or_lose_binary[0]
 
 alpha = 0.01
 weights = [0.1, 0.2, -.1, 0.5]
-input = [toes[0],wlrec[0],nfans[0],humidity[0]]
 
+input = [toes,wlrec,nfans,humidity]
 
-for iter in range(3):
+for iter in range(10):
 
     pred = neural_network(input,weights)
     error = (pred - true) ** 2
