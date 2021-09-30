@@ -1,0 +1,1102 @@
+~0 .1 Structured analysis, design, and
+implementation of information systems (STRADIS) The major statern nt of Gane and Sarson's methodology of systems development called
+STRAOIS comes in their bo~k entitled Structured Systems Analysis (Gane and Sarson,
+1979). The development of this structured syste1ns approach to analysis came as a result
+of the earlier development of a structured approach to design. The structured design concepts
+were first propounded in 1974 by Stevens et al. (1974), and these ideas were later de,·eloped and
+refined by Yourdon and Constantine (1978), and Myers (1975 and 1978). The work of Jackson
+(1975) was also influential.
+Structured design is concerned with the selection and organization of program mooules
+and interfaces that ,.,·ould solve a predefined problem. However, it makes no contribution to
+""'
+the defining of that problem. This proves to be a practical limitation as the development of an
+information system requires both analysis and design aspects to be addressed, and, \\·hile structured
+design was acknowledged to provide significant benefits, these benefits were wasted if
+the definition of the original problem was not well stated or inaccurat~.
+A number of people have therefore attempted to take the concepts of tructured design
+and apply them to systems analysis, in order to develop a method of pecifying requirements
+and to provide an interface to structured design. In this way the technique of structured
+analysis were developed. Apart from Gane and Sarson's work, Del\1arco (1979), Weinbero
+0978), and Yourdon (1989) are all texts on structured analysis co,·ering ome of the same
+ground and utilizing very similar techniques within each approach.
+Gane and Sarson only relatively briefly outline a methodology of ystem.5 deYelopment
+in their book. The majority of the book is devoted to de criptions of the techniqu ::
+which the methodology utilizes. This is in direct conb·ast to some other method ..,log-i ~.
+SSADM (Section 21.1) and ISAC (Section 25.2), for ex.ample, lay out the _t p: of the meth _
+o l ogy m. grea td e t a1- 1. Thereforethemostimportantaspcctofthc" TRADL mt>tht :i-..] ~ •is e
+b . . h f any of the techniques which WL'l'L' dc-.cnbt'd :-t.'p.u,,tt>l\' in P.lrt I\ this
+~~~~~t~om .
+h I e W book. Nevert e ess, w ill continue to use the term 'methodolog.v ' m the .::- nt \.
+STRADIS. These techniques are utilized, in some form or another. b_\ man_\· different n etl •
+olog1. es, an d t h ere f ore STRADIS is not unique but, along with tht' \ ourdon S.y stt>ms ~le
+(Secti. on 20 .2 ) , may be regarded as epitomizing those methodologies based nn fun~
+396 Methodologies
+decomposition (Section 12.5) and the use of the data flow diagram (DFD), described· s .
+12.1. . m ection
+STRADIS is conceived as being applicable to the development of any inf .
+ormation
+system, irrespective of size and whether or not it is going to be automated. In practice h
+, OWever
+it has mainly been used and refined in environments where at least part of the informatio~
+system is automated. The methodology is envisaged to be relevant to a situation in which there
+is a backlog of systems waiting to be developed and insufficient resources to devote to all the
+potential new systems.
+1 Initial study
+The starting point of the methodology is an attempt to ensure that the systems chosen to be developed
+are those that most warrant development in a competing environment. The most important
+criterion in this selection process is argued to be the monetary costs and benefits of each proposal.
+Systems are viewed as contributing toward increasing revenues, avoiding costs or improving
+services. The initial study to discover this information is conducted by systems analysts gathering
+data from managers and users in the relevant areas. The analyst is to review existing documentation
+and assess the proposal in the light of any strategic plans relating to systems development
+that may exist within the organization. The initial study usually involves the construction of an
+overview data flow diagram of the existing system and its interfaces, and an estimate of the times
+and costs of proceeding to a detailed investigation. In addition, some broad range of final system
+development costs might be estimated. The initial study normally takes between two days and
+four weeks, depending on the size and importance of the application.
+On completing the initial study, a report is reviewed by the relevant management, and
+they decide on whether to proceed to a more detailed study or not. If they approve of the proposal,
+they are committing themselves to the costs of the detailed study but not necessarily to
+implementing the proposed system.
+The initial study might be thought to be quite close to the traditional no_tion of a feasibility
+study outlined in Chapter 3. However, there are some important differences. STRADIS
+does not include a review of alternative approaches to the proposal, and it is not, perhaps, as
+major or as resource-intensive a task as a traditional feasibility study. Furtherntore, a traditional
+feasibility study, if approved by management, is usually in practice a commitment to the
+implementation of the complete proposal. Gane and Sarson do address all these aspects, but at
+later stages within their methodology.
+2 Detailed study
+This takes the work of the initial study further. In particular, the existing system is examined in
+detail. As part of this investigation, the potential users of the system are identified. These users
+will exist at three levels:
+l. The senior managers with profit responsibilities, whom Gane and Sarson call the 'commissioners',
+whose areas will be affected. They initially commissioned the syStem
+proposal.
+C apter 20 Process-oriented methodologies 397
+e rrud e manage. of -
+3 c-u.se _; ;ha -- th I
+' e peop e who will actually work directly with the system.
+e departmen affected.
+ese ~ee se of users, the analy ts a certain their interests and require-
+. · i.~ -ervi~,in. them. th
+- ex , e analy t prepares a draft logical DFD of the current
+~- ,,·em. Tius ·,-ill u.ally im·oke constructing a DFD that extends well beyond the current
+" ,
+3
+-e~ w cier consideration, in order to be clear exactl,· "·hat and where the boundaries are in
+·el.a o ·o o· e- y-· d t ·d · ·
+• . ,,,ems an o I enlify the interfaces between various systems.
+Figure
+2
+0. • depicts a data flow of part of a uniwrsity admissions procedure. The system
+under co idera··o~ is that enclosed by the dotted line, but, in order to appreciate the context,
+a lar er s:· tern is depicted which enables the interfaces to be clearly identified. Any data flow
+:ha· crosses the ciotted line must be addressed by both the external system and the system
+tL'lder co:isideration. In this case the diagram has highlighted the fact that those applications
+·•·: ere t..'le qualificabons are not known require a decision to be made (see the data flow
+mar~ with the asterisk . This is a non-obvious interface which might otherwise have been
+neglected.
+The boundary may be dra,,-n in any place and could be moved. It may, for example, be
+more logical to include other processes within the boundary in order to minimize the number
+o' interfaces to the external S\"Stem. This is particularly important when the automation
+boundary is being chosen.
+STRADIS describes in detail the drafting of DFDs at various levels, showing how each
+level is exploded into lower le\'els through to the level where the logic of each process box in
+tre low-le\'el DFD should be specified using the appropriate process logic representation, for
+example, decision trees, decision tables, or structured English (Sections 12.2-12.4). They
+suggest that DFDs and other outputs should be reviewed or 'walked through' with a number
+of users, 50 as to check their validity, and alterations made where necessary.
+The detail of the DFDs and the process logic is entered into the data dictionary. The data
+dictionary can be either manual or computerized. On the DFD, data flows and data stores are
+defined using a single name ,-vhich is meaningful. All the details that the name represents must
+be collected and stored in the data dictionary (Section 19.1).
+The extent of detail that the analyst goes to at this stage in the methodology is not made
+clear, but it appears that not alJ low-level processes are specified in process logic and that not
+all data flows and data stores are specified in the data dictionary. It is u ual to specify in detail
+only the most significant at trus stage. .
+The initial study estimated the costs and benefit of the proposed system in outline.
+The<,e estimates are fur ther refined withm the detailed study. The anah·sts need to in\'estigate
+the assumpt1. 0ns on which the estimates were based, and ensure that all aspects h,H·e been con-
+s1. dered. Th ey a 1s o n .,., c• d to consider the effe t'> and costs of the propm,ed system from the point
+of vi. ew o f organ1·1 :a i1·o nal impact. In other words, the} need to ha\'e a better estimate on which
+a final decision can leg1timately be made
+In summary, the detailed study contains:
+398 M thodolog1
+.,,,,,,.----
+--- I Regulations
+-- Prt>VIOUS / I Course
+......
+'
+applicants I requ irements "
+I '\
+I
+I
+/
+I
+I
+□Appl Check I
+Check
+Validate
+I~ application
+--,
+university I course Make
+require- ,-\-+
+require- decision
+ments -
+I ments
+.. I '
+r---\LJ I
+I
+I
+Registry l Qualifications
+I
+I I
+I ½. ReJC-Cl I Second Accept Complete -r check details
+I
+'- I
+Unknown• I
+Check I
+unknown I Reference I
+qualifi
+( /
+books I /
+,
+cations I /
+I /
+I
+/ '
+I Applicants ( I \ ~.;.,,y I
+\
+\ I
+j I Swdent 1~ Send
+\ I
+British letter of
+\
+Council I
+\
+rejection I
+I \
+I \
+/
+/ Statistical \
+,,,--- t analysis \
+I
+I Statist ics
+\
+\ \
+\ I
+--------
+Figure 20.1: Example of a system boundary (dashed line) on a DFD
+\
+I
+\
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+• a definition of the user community for a new system, that is, the names and responsibilities
+of senior executives, the functions of affected departments, the relationships among
+affected departments, the descriptions of clerical jobs that will be affected, and the
+number of people in each clerical job, hiring rates, and natural attrition rates;
+• a logical model of the current system, that is, an overall data flow diagram, the interfacing
+systems (if relevant), a detailed data flow diagram for each important process, the
+Ch p r 20 Pro s ori n d m hodolo 399
+•
+11 wherP I fi 1bh•;
+• , n .i ount r,t am1 , tith •/ l'a t u t or , pr -...-.ur ,., ( 1 ,rny) 1. ndud11. 1g tlw ,_y-,tl•m cost ,ind ,1
+firm o /l111w bll(lf;l'! for th, . 1 I I . . .
+I n, p ,., ' l Clllllll~ ,1 nwnu lll p1h-.1bk ,lltl•rn,ltl\'l'").
+I h r, ult 11f ti ,, l11'1,11lt· I I I Ill \' .ir,• pn· ,·nll'd lo rn,111,1 •ernrnl, ,ind ,, dl'...i-.i1111 will bl' m,Hk
+Pi lher lo t11p ,ll lh1 I, ,,, , r I rncl'i·d 1t1 tlw rw 1 1 h,i 1,
+3 Defini ng and designing alternative solutions
+1 lw Ill' l ph,1 1• d ·l11ws ,1lt1•111.1tiv1· snlut11111 , In tlw pmbl,•m-. ,,f tlw ,. ,-.1,ng ,y-.ll'l11 t-ir-.1, thl'
+llrh,111 i1,1tiu11.1l C1hj1·dl\ 1•s, ,h dl'l11wd in tlw 1111ti,tl twly, ,re• 1 111H•rlt~I 111111 ,1 -.d of "\ -.ll'm
+11bj1·t Ii\ l • t\11111g,111i1,1ti1111,d 11h11·1 t1,·1· is ,I 1C'l,1ti, L'IV hri.;h-11•, 1•1 oh)l' II\ 1• h,1,·111g ,In l'lft·1 I on till'
+Cll g,11111,1111111 . I h1:- uiuld im ludl' 111t rl'.1-.1 •d n·, 1•1H1P, ln\\'11 r Io t, "r irnpr11n•d ,·n· 1c t•. ,\ -.y-.ll-m
+ubj1•1 t1, 1• i-. .11 ,1 luw1•r 11•, 1•1 ,111d rd,111•-. to wh,11 tlw ... y ... tt•m lwuld d11 to lwlp rn,in,1gt•nwnt
+,1 hil1
+\ 1' tlw 11rg,1ni1,1 ti1111,1I ohj1•c:ll\"l'"·
+l h1.• -.y-.t1•rn nbjl-cli\'1'-. -.h11uld bt• -.tn,ngly -.t,11l'd . I hi-. mt•,111-. th,1t tht')" -.hould bt• '>J'l'l'1fk
+.ind nw,J-.ur,1bll', r,1th1•r th,111 g1•1wr.1l l·or 1.• ,1mplL•, 'impro\'ing thl' trnwl11111
+-.-. of inform.ition'
+"11uld bl' ,l " •.ikly :, latl'd obJL'Cll\ L', and 1t would bL' prl'fl'rabl1• to ,t,llL' thi-. ubJt'c.:11\'l' mort·
+-,trnngly, lllr L' amplL•, ' to pniducl' lhL• month!) sale anal) ,., report by thL· fourth working d,iy
+of tlw follo\\·ing month'.
+Thl' ,rnaly!'>t u-.es tlw-.l' objl'Lli\'l'S lo produce a logical DFD of the nl'w or dl'sirl'd system.
+The c i-.Ling ',\'!->ll'm I J L) would normally be ust•d as the basis for th!!>, and the desired system
+ma) ,m oh e thl' introdud10n of nt'w or changl'd data flows, data storl'-,, and processes. The
+rw,, DFD -.hould bl' LOnslruc.ll'd lo a len•l of dL•tad which shows that the most important
+system obiecth es are being met.
+The m thodolog) then enters a design pha:,e. At this time, analysts and designers work
+together to produce , arious altematin~ implementation designs which meet a variable selection
+of the identified y tern objectives. The alternatives should cover three different categories of
+design. First, a low-budget, fairly quick implementation which may not initially meet all the
+objectives; second, a mid-budget, medium-term version, which achieves a majority of the objectives;
+and third, a higher-budget, more ambitious version achieving all the objectives. Each
+alternative should have rough estimates of costs and benefits, timescales, hardware, and software.
+The report of this phase of the project should be presented to the relevant decision
+ma k crs, an d a co mffil·tment made to one of the alternatives. The report should contain the following:
+• a DFD of the current system;
+• the limitations of the current system, including the cost and benefit estimates;
+400 Methodologies
+• tlw logical l)J ,[) of the nC'W system.
+hir (',lCh of llw id(•nllficd ,11tern<1livt's, the design will include statements covering:
+• llw p.irls of till' l)J,[) Lhal would be implemented;
+• tlw us(•r 1nll•rf,1Ct' (lNmin<1ls, n•porls, query facililics, and so on);
+• thl' 1•stimall'd costs and benefits;
+• tlw oullim• 1mplemenlalion schedule;
+• lhl' risks involved.
+4 Physical design
+lht• design team Lhcn refines the chosen alternative into a specific physical design which
+involves a number of parallel activities:
+1. All the detail of the DFD must be produced, including all the error and exception handling,
+which has not been speci fied earlier, and all the process logic. The content of the
+data dictionary is completed and report and screen formats designed. This detail should
+be validated and agreed with the users.
+2. The physical files or database will be designed. They will be based on the data-store contents
+previously specified at the logical level. Data stores are defined in the DFD as the
+temporary storage of data needed for the process under consideration. This has the
+effect of introducing many data stores scattered all over the DFD. Many of them will be
+very simi lar in content and have a significant degree of overlap.
+3. The data stores need rationalizing, and the technique of normalization (described in
+Section 11.2) is utilized to consolidate and simplify the data stores into logical groupings.
+The actual process of mapping and the design of the physical files (or database) are not
+defined.
+4. Derive a modular hierarchy of functions from the DFD. The designer seeks to identify
+either of two structures that any commercial data processing system is thought to
+exhibil. The first structure is the s implest. Herc all transactions follow very similar processing
+paths (Figure 20.2). Such a system is termed a 'transform-centred' system. The
+second s tructure is one in which the transactions require very different processing. This
+is termed a 'transaction-centred' system and is illustrated in Figure 20.3.
+The firsl step therefore is to identify which type of system is being described. [tis recommended
+thal the raw input data flow is traced through the DFD until a point is reached at which it can
+no longer be said lo be input, but has been transformed into some other data flow. The output
+is traced backward in a similar fashion until ii can no longer be considered to be output.
+Anything in-bclwt•(•n is lermcd the 'transform'. The transform is then analysed to sec if it is a
+single transform or a number of differt•nl transforms on diffcrl'nt transaction types. Once one
+or other of these high-level functional hierarchy types have been identified from the DFD, the
+detai l of the modules in the hicrnrchy and the communication between them is constructed.
+The final task in this phase is the definition of any cll•rica l tasks that the new system will
+Chapter 20 Process-oriented methodologies 401
+'
+~
+Capture
+~ Validate
+input input I-t--+
+Figure 20.2: Transform-centred system
+Identify
+-----+ transaction
+type
+Figure 20. 3: Transaction-centred system
+Input
+system
+Validate
+transaction
+A
+Validate
+transaction
+B
+Validate
+transaction
+n
+,,-
+Transform
+Format
+input to
+output
+Process
+system
+-~ output
+'--
+Output
+system
+Process
+transaction
+A
+Process
+transaction
+B
+Process
+transaction
+n
+Display
+I---+
+output
+&
+require. The clerical tasks are identified according to where the automated system boLmdary is
+on the DFD and according to what physical choice of input and output media has been made.
+The above activities are pursued to a level of detail at which it is possible to give a firm
+estimate of the cost of developing and operating the new system. The major components of
+these costs are identified as:
+• the professional time and computer test time required to develop the identified modules;
+• the computer system required;
+• the peripherals and data communication costs;
+• the professional time required to develop user documentation and train users;
+• the time of the users who interact with the system;
+• the professional time required to maintain and enhance the system during its lifetime.
+402 Methodologies
+Subsequent phases of the methodology are not clearly defined as the methodology is effectively
+concerne d ma·m Iy w1· th a nalysis, to ca lesser extent design, and hardly at all with implementation .
+However, the follow ing list indicates the remaining tasks that Gane and Sarson envisage as
+being needed to complete the development of the system:
+• draw up an implementation plan, including plans for testing and acceptance of the
+system;
+• develop concurrently the application programs and the database/ data communications
+func tions (where relevant);
+• convert and load the d atabase(s);
+• test and ensure acceptance of each part of the system;
+• ensure that the system meets the performance criteria defined in the system objectives,
+under realistic loads, in terms of response time and throughput;
+• commit the system to live operation and tune it to deal with any bottlenecks;
+• compare the overall system facilities and performance to original objectives, and amend
+to resolve any differences, where possible;
+• analyse any requests for enhancement, prioritizing these enhancements, and placing the
+system in 'maintenance' state.
+20.2 Yourdon Systems Method (YSM)
+YSM was originally very similar to STRADIS. Functional decomposition or top-down design,
+in which a problem is successively decomposed into manageable units, was the basis of the
+approach. However, although based on the structured approach it uses an approach known as
+event partitioning. This approach is neither pure top-down nor bottom-up, but is described as
+'middle-out'. The analyst begins by drawing a top-level context diagram which indicates the
+system boundaries and thus the sources and sinks. Then, following interviews with the users,
+a textual list of the events in the environment to which the system must respond is constructed.
+Following this, some of the techniques described in Chapter 12 are used to document the
+system further.
+YSM covers both the activities of the organization (although this could be at department
+level as well as at the level of the organization as a whole) and the system itself. Enterprise
+requirements need to be modelled as well as system requirements. For example, analysts ma}
+create an entity-relationship diagram and other information about data for the department, but
+only some of this will be appropriate for the system. Modelling at a department rather than
+system level will ensure consistency as well as avoiding the duplication of time and effort.
+Emphasis is therefore placed on modelling both the organization and the system. Many of these
+modelling methods are appropriate to the use of support tools, particularly toolsets (Chapter
+19).
+There are three major phases in the YSM approach, as shown in Figure 20.4. The feasibility
+study looks at the present system and its environment. Phase 2, essential modelling, aims
+to describe the essence of a software system in terms of how the required system must behave
+and what data must be stored to enable this to happen. It assumes that there are no limitations
+Study the current system
+Study the system's environment
+_l
+Construct environment model
+• Statement of purpose
+• Context diagram
+• Event list
+Construct behavioural model
+• Data flow diagram
+• Entity relationship diagram
+• State transition diagram
+• Data dictionary
+• Process specification
+l
+Model the physical processes involved
+Model the software environment in
+which the system is to exist
+Model the structure of the software to
+be produced
+Figure 20.4: The Yourdon Systems Method
+Chapter 20 Process-oriented methodologies 403
+~ Phase 1
+Feasibility study
+Phase 2
+Constructing essential model
+Phase 3
+Constructing implementation model
+affecting implementation, that is, it assumes unlimited resources, unlimited power of technology,
+and so on. It is the major phase of the approach. The final phase, implementation
+modelling, aims to incorporate those features found in the customer's statement of requirements
+using the essential model and will be dependent on the appropriate use of available
+technology. We will look at these three phases in more detail.
+Although the only enterprise mode] described in detail in Yourdon (1993) is the enterprise
+essential model, the creation of an organization as well as system-level mode] might
+suggest an enterprise or strategic planning phase for information systems development.
+Indeed, some followers of YSM include a strategic planJ1ing phase before the feasibility study
+of each proposed system in that plan. However, an enterprise implementation model is
+suggested and this will point to proposals for the hardware and software decisions for the
+organization as a whole, not a decision which should be dominated by the needs of one particular
+application.
+1 Feasibility study
+The feasibility study looks at the present system, its environment, and the problems associated
+with it. The objective here is to get a general understanding and an overview of the existing
+404 Methodologies
+system. It is to understand what the existing system does (not how it works). The analyst will
+tend to draw an overview data flow diagram for the current system and its interfaces, and the
+1 I ana yst may a sost a 1·t lo put tllgether an entity-relationship diagram. The information required
+will normally be obtained from interviewing the users. This phase is much the shortest of the
+three, normally taking only a few weeks to complete.
+2 Essential modelling
+This stage gains the most emphasis in YSM. There is both an enterprise and a system essential
+model. We will emphasize the latter in our description as it is essentially the sum total of the
+systems models. The same considerations and models are reflected at the organizational level
+where, wrnsually, the 'organization' to be considered and the 'system' are the same. Having an
+overview of the present system, it is possible then to construct an essential model. The system
+essential model is a model of what the system must do in order to satisfy the users' requirements.
+It does not say anything about how this system is to be implemented. Therefore, it is the new logical
+model. In the 1993 version of YSM, essential modelling itself also has two major components:
+• environmental model building;
+• behavioural model building.
+In some descriptions, the creation of the entity-relationship diagram is seen as part of a third
+parallel component, referred to as the information model. In the following description, these
+aspects form part of the environmental model and behavioural model building phases. The
+activities are the same in either case. The key difference is, perhaps, more subtle. It represents
+the change in the approach from one which emphasizes processes to one which emphasizes
+both process and data aspects. It also enables stress to be made on the importance of comparing
+the data and process aspects to ensure consistency of models and therefore the integrity of the
+overall specification. This also separates YSM from STRADIS.
+The environmental model defines the boundary between the system and the environment
+in which the system exists. The data coming from and to the environment are identified.
+The model consists of a statement of purpose, context diagram, and an event list.
+The statement of purpose is a brief, concise, textual statement about the purpose of the
+system. It is provided for top management, user management, and others who are not directly
+involved in the development of the system. It is only about a paragraph long.
+A DFD type context diagram is used to depict the system and its environment (see
+Figure 12.6 in Section 12.1 for an example). The context diagram represents the system in a
+circle in the middle of the page, along with the main sources and sinks of the data entering to
+and from it. It identifies the people, organizations, and systems with which the system communicates.
+The data coming into the system that arc processed in some way and then output in a
+different form are also identified along with any intermediary data stores. It also shows the
+boundary between the system and its environment.
+The event list names the 'stimuli' that occur in the environment of the system to which
+the system must respond. An event may be flow-oriented, temporal, or a control event. A flow-
+Jia~r,lOI
+1,eharn1
+strucle
+)tores a
+and ou
+are the
+ations
+ij0Wd
+"<dtio
+Chapter 20 Process-oriented methodologies 405
+oriented e,·ent is one associated with a data flow. A temporal event is triggered by reaching a
+partkular point in time. Control events occur at an unpredictable point in time and are therefore
+a special case of a temporal event.
+A first-cut data dictionary which describes the composition of each data element and a
+firsh::ut entity-relationship diagram highlighting the relationship between stores (the entities)
+ma~ als,..1 be constructed at this time, but both are very early versions.
+The behavioural model is a model of what the internal behaviour of the system must be
+in order to deal with the environment successfully. It includes a first-cut data flow diagram,
+entity-relationship diagram and state transition diagram and adds information to the data dictionary.
+A state transition diagram shows how the properties of an entity change over time and
+is therefore similar to an entity We cycle (Section 12.9). Note that behaviour refers to the behaviour
+of the system and does not imply any emphasis on people-oriented aspects. The processing
+beha,iour of the system, that is, how the system uses its inputs to produce the required output,
+is shown using data flmv diagrams. The structure and use of the data in the system are shown
+using a data dictionary and a set of entity-relationship diagrams. The dynamic behaviour of the
+s~·stem, describing hmv events in time affect behaviour, is modelled by extending the data flow
+diagrams (v,hich represent control) and state transition diagrams (which represent control
+beha,·iour).
+From the event list obtained in the environmental model, a data flow diagram is constructed
+·with one process representing the system's response to each event in the event list.
+Stores are then drawn as needed to enable the processes to access the required data, and the input
+and output flows are connected to and from the processes. The data flow diagram or diagrams
+are then checked against the context diagram for consistency. In parallel, the control transformations
+are specified and the data relationships are modelled. By the end of this stage, the data
+flow diagrams are completed by a p rocess of levelling out, and the data dictionary, process specifications,
+entity-relationship diagram, and state transition diagram are also completed.
+The process of levelling data flow diagrams involves restructuring so that there is a set of
+data flow diagrams, some the result of levelling upward and some the result of levelling downward.
+This is the key to the claim that YSM is middle-out rather than top-down. If the first-cut
+data flow diagram is too complicated with many processes, then related processes are grouped
+together into meaningful aggregates, each of which will represent a process in the higher-level
+data flow diagram. A rule of thumb is suggested that each data flow diagram wiU have around
+seven processes and stores in total. Downward levelling may be necessary where it is found that
+a process at the middle level is not a primitive process but needs to be expressed in more detail
+in a lower-level data flow diagram. This means that the initial process, which was a response to
+an event, is too complex for that middle level. The levelling process is seen in Figure 20.5.
+"-Jote that, as shown in Figu re 20.6, processes arc illustrated by circles in the YSM standard.
+Other shapes are also used to represent sources and sinks (a simple rectangle with no
+shadowing) and data stores (two parallel lines). Further, Yourdon (1 989) recognizes two types
+of data flow. Discrete data flows arrive al their destination al discrete points of time (arrow)
+whereas continuous data flows are always available at their destination (arrow with two
+406 Methodologies
+Upw,11d
+lcvell111g
+Preliminary data
+flow diagram
+Downward
+levelling
+hca d s· ) . This indicates that, a lthough many of the te ch -
+n1. qucs a re common to a number of methodologies, th ere
+arc o fl en V,a l.1·anccs in the way they are used, drawn ' and so
+on.
+Process specifications are then drawn up for every
+' fun ctional primitive', that is, every process in the bottomlevel
+data flow diagram. These are referred to as minispecs,
+which arc detailed specifications of each data process.
+Essentia lly, they s tate the rules that convert the inputs to the
+outputs. The process specification may take the form of
+structured English (Section 12.4), decision tables (Section
+12.3), or any other method appropriate for the process which
+can be verified and communicated easily to the users. These
+will be cross-checked with the data dictionary and entityrelationship
+diagram, and it might be necessary to modify
+the data flow diagrams as a result of this further detail.
+The entity-relationship diagram also needs to be
+completed. YSM advocates iteration, and this diagram will
+also be refined from its first-cut form in stages. The knowledge
+gained when refining the data flow diagram will be
+Figure 20.5: Upwards and downwards levelling of YSM data flow used to help refine the entity-relationship diagram.
+diagramming If the system being modelled has any real-time
+characteristics, then a state transition diagram is developed
+in addition to the entity-relationship diagram and data flow diagram. A state transition
+diagram specifies how a control process is to take account of its input control flows and how it
+is to output con trol flows. The effect which input control flows have depends on the 'state' of
+the system, and they may change the state of the system and cause control flows to be output.
+Moreover, the output control flows have an effect on the data flow model of system behaviour.
+Process
+Data store
+Figure 20.6: YSM data flow diagram symbols
+Discrete
+data flow
+Continuous
+data flow
+Solllces and sinks
+Chapter 20 Process-oriented methodologies 407
+Like olher s lructurcd '~' p P1.o acI 1 es, , methods' are emphasi.z ed ·m YSM ra the r tha n a
+'m0th0d010gy', and many techniques are described in detail, including entity-event matrices
+and function- entity matrices (Sect1·on 12 .7 ) , t h e spec,. f.1 cat1• on o f enti·t i·e s, rel a t1· 0nsh 1' ps, a ttn ' bu te s ,
+events, and ope ra tions (Section 11.1) and normalization (Section 11.2).
+The mode ls together should describe 'what will the system do?' (e.g. the data flow
+diagram), 'wha t happens when?' (e.g. the event list), and 'what data is used by the system?'
+(e.g. the entity-relationship diagram). Some models link these dimensions, for example, entity
+life cycles; entity- event matrices link time and information, and data flow diagrams link data
+and p rocesses. Together, it is argued, the models provide a full description of the system.
+3 Implementation modelling
+This phase starts the systems design process. The limitations of such factors as the technology
+available, performance requirements, and feasibility modify the essential model. Data flow diagrams
+and state transition diagrams are examined so that, for example, boundaries of
+computerization are marked, and within them groups of processes are bounded for particular
+devices and processes. This also includes allocating software environments to groups of processes.
+The entity-relationship diagram is examined to look for pointers as to which database
+management system might be suitable and how the data might be stored. Implementation
+modelling, in short, bridges the gap between specification and systems design.
+20.3 Jackson Systems Development (JSD)
+Michael Jackson's program design methodology, Jackson Structured Programming (JSP),
+which is described in Jackson (1975), has had a profound effect on the teaching and practice of
+commercial computer programming. Jackson (1983), on Jackson Systems Development (JSD),
+argues that system design is an extension of the program design task and that the same techniques
+can be usefully applied to both. Aspects of JSP are diffused throughout JSD, so that the
+JSD methodology is a significant development on its precursor, and therefore should not be
+seen as a 'front end' to JSP but an extension of it, where JSP is the core. 'In principle', says
+Jackson, 'we may think of a system as a large program.' However, the primary purpose of JSD
+is to produce maintainable software, and its emphasis is on developing software systems. This
+leads to a potential criticism of JSD in that, in the context of this text, it is oriented toward software
+and not to organizational need.
+Given this comment, therefore, it is not surprising that JSD does not address the topics
+of project selection, cost justification, requirements analysis, project management, user interface,
+procedure design, or user participation. Further, JSD does not deal in detail with
+database design or file design. At least as described in his book, Jackson's methodology is not
+comprehensive in the sense that it does not cover all aspects of the life cycle. However, the
+commercial version of JSD, because of practical necessity, was extended to include some of
+these aspects.
+The emphasis in the methodology is solving what Jackson terms the hidden
+path problem, that is, the path between the presentation of a specification to the design/
+408 Methodologies
+programming group and the completed implemented system, which could be described as a
+'bundle' of documentation, listings, and executable programs. Jackson asks, 'What reasons do
+we have to support the claim that we have delivered what is required in the specification?' The
+traditional response is that the answer is found in the processes of testing and checking. But
+there are two problems here. We cannot be sure that the tests are complete, and, in any case,
+when testing is possible, the system is already complete and it is usually rather too late and too
+costly to repair the damage.
+JSD uses transformation through process scheduling as the answer to the hidden path
+problem, and a major contribution of JSD lies in the areas of process scheduling and real-world
+modelling. Further, JSD deals with the problem of time in systems modelling and systems
+design in a way that most other information systems design methodologies do not, as the latter
+tend to model static elements in the system.
+There are three major phases in JSD: the modelling phase, the network phase, and the
+implementation phase. In the modelling phase, events and entities are identified and entity structures
+and entity life cycles formed. In other words, analysts ask what is happening in the real
+world and how might this be connected to the computer world. In the network phase, the inputs
+and outputs are added to the model so far derived so that the input and output subsystems can
+be analysed. In other words, the analysts ask what outputs are needed from the system and
+what processes and operations must be added to produce these outputs. The implementation
+phase is concerned with detailed design and coding, that is, how can the specification (model
+plus function) be transformed to run on the hardware:
+Modelling phase
+1. Entity action step
+2. Entity structure step
+Network phase
+3. Initial model step
+4. Function step
+5. System timing step
+Implementation phase
+6. Physical system specification step.
+In the entity action step the systems developer defines the real-world area of interest by listing
+the entities and actions with which the system will be concerned. In the entity structure step the
+actions performed or suffered by each entity are ordered by time. In the initial model step communications
+between entities are depicted in a process model linked to the real world. In the
+function step functions are specified to produce the outputs of the system, and this may give
+rise to new processes. In the system timing step some aspects of process scheduling are considered
+which might affect the correctness or timeliness of the system's functional outputs. In
+Chapter 20 Process-oriented methodologies 409
+the physical sys tem specific a t'i on step the system developer applies techniques of transforma
+tion and scheduling that take account of the ha rdware and software available for runni· ng the
+system. JSD is applied iterativel d · · c Y, an , as mcreasing detail is revealed, data and functions will
+also be revealed. Each of these stages w'1l l b e Io o k e d a t .i n turn.
+1 Entity action step
+JSD aims to model the real world. In the entity action step, real-world entities are defined. These
+might include SUPPLIER, CUSTOMER, or PART, but, unlike the data analysis approaches, JSD is more
+concerned with the behaviour of the entity than its attributes or its relationships with other entities.
+Conventional entity modelling presents a static view of the real world, whereas JSD is
+con cerned with modelling system dynamics.
+To be defined as an entity in JSD, an object must meet the following criteria:
+l. It must perform or suffer actions in a significant time ordering.
+2. It must exist in the real world outside the system that models the real world.
+3. It must be capable of individual instantiation with a unique name.
+Entities may also be collective (e.g. BOARD OF DlRECTORS) if the instantiation has objective reality
+without considering its component objects. Entities may be generic (e.g. SPAREPART) thus supporting
+the abstraction of classification, or specific (e.g. INNER-FAN-SHAFT). Entities that exist in
+the world may be ignored if it is impossible or unnecessary to model their behaviour. Therefore,
+only a relevant subset of the real world is modelled.
+An action describes what an entity does within a system. Since the distinctive feature of
+JSD entities is that they perform or suffer actions, it is necessary to specify the criteria for something
+to be an action. These are as follows:
+l. An action must be regarded as taking place at a point in time, rather than extending over
+a period of time.
+2. An action must take place in the real world outside the system and not be an action of
+the system itself.
+3
+_ An action is regarded as atomic and cannot be decomposed into subactions.
+Since the original version of JSD, more emphasis has been placed on the process l1f eliciting
+attributes, both action attributes and entity attributes. Whereas action attributes Cl)Tilt' trl1m
+outside the system and trigger the action, entity attributes add information abL1ut the entity ,rnd
+will be updated by its entity actions. The actions and changes to the en ht\ ,1ttnbutL'S fl1rm tht'
+entity life history. It b important to ant1lysc when thl'sL' ch,mgL'S occur ,-;l) tlut tlw l'ntity Iii<'
+history will ha\'e the correct t1ml' onknng. But Wl' Ml' Ill>\, di-,l ussmg thL• bl•~inning~ L,t tht'
+next step, the entity strullurl' stl'P
+The end rt•sult of tlw l•ntit\ ,1dnm stl'P i-. ,1 list lll L' ntil1L•-; ,ltld tlwir ,lltribull'~ and a list
+of actions and tlwir attributl'S. 1 lw list ol L•ntitiL•s is li,1blL' tli lw mu.:h sh,11t,'r th.rn that produced
+by an equi\'alent dat.1 an,1lysis pron•s;., p.1rttcul,1rly 1f tlw l,lttt•r nnrm,1h1l'S tht' cntttws, hL'Cause
+the functional components of thl' sy;.tt'm Ml' e,l·ludt•d ,1t thb ~t,\~l'
+Open
+~ccount
+-
+I
+410 Methodolog1e~
+2 Entity structure ste P I n• l'xpresscd d iagrammatically in JSD. This i
+. ' i ·dl'rrd in tinie anl « . . ~
+I'hl' ,Klions of ,111 l'l1l tl\ '"' ( 1
+. • , (S, lion 12.9), i'.llthough there are differences. Tht'v
+• f• l1ty lill'CVdtS,lC . . '
+simil,1r t<l tlw lt•, hn1qu,· <l '
+11
+· tl,c structure of a process m terms of
+( u~to111c1
+I __
+I
+Operate
+account
+I •
+T!ansaction
+I
+I
+0
+Clo;e
+a ccount
+0
+show •
+~(•quenc·c ·, :.election' and iteration. The diagram
+shown as Hgurc 20.7 is read from top to bottom a~
+a I, u. :ra rchic'a l decomposition. Actions are shown as
+th1..• leaves, whereao; components higher up represent
+c1ggrcgations of actions. Each structure
+d. n is intended to span the whole lifetime of an 1agra1
+entity, including therefore an action that causes the
+entity to come into existence and one that causes it
+10 cease to exis t. The model must illustrate time
+ordering of these clements. The lifetime of an entity
+may span many years in the real world .
+Pay in Withdraw
+JSD s tructure diagrams do not support concurrency.
+For example, the entity CL'STOMER in a
+banking system, an example discussed fully in
+Jackson (1983), might have been specified as a
+sequence (as in Figure 20.7) of OPE.\l•I\CCOLNT,
+Ol'ERAff-ACCOUNf, and CLOSE-ACCOLI\ T. OPERATE·
+ACCOUNT is an iteration of TR/lr-.:SACTIONS (hence the
+Figure 20. 7: JSD structure diagram
+asterisk which lllustrates iteration), each of which is
+a selection of either PAY-IN or w111 mRAW (hence the small circle which indicates selection). Such
+a struchire would conslrnin a customer to having only one account. To relax this constraint, the
+systems developer may be tempted to redraw the structure diagram as in Figure 20.8. It now
+appears thal the customer may have many accounts each being operated as in Figure 20.7. The
+diagram now specifics that the customer can have more than one account, but not more than
+one at the same time. A customer may only open a new account after an existing account has
+been closed. The JSD structure diagram cannot show the simultaneous operation of many
+accounts. The answer to this problem is lo specify a new entity ACCOUNT whose life history rn1-
+cecds in parallel lo the life history of the CUSJ'OMr-R entity. C USTOMER now appears as in f igure
+20.9(a) and AC'COU.\JT as in Figure 20.9(b).
+In JSD, discrimination between entity roles b necessary if an entity can play more than
+one role simultaneously. Jackson provides an CXi'.lmple usini; the entity SOl.l)lliR. A soldier enliSb
+in the army and may be promoted lo a higher rnnk at various points m his career. Soldiers are
+also given training ,ind may attend trnining courses, which they may or may not complete sue·
+cessfully. If succei,sful completion of ii course ,1lways leads to promotion, then these facb can
+be accommodatl·d in om• •s trurtur~" u. 1 1· ,, .,.,,r ~" n,, . If the re 1.s no nect'ssary connec 0-o n between
+training and a carcl•r, lhl'n two structure J i•w..,r am.s u~l.l 'requ1. rcd ,one fo r tI1 esol d1. er 's prornotion
+career and om• for his training carel'r. The soldier in this example is playing two roles, one ,is ,1
+Customer
+Account
+group
+I
+Open Operate
+account account
+Transaction
+I
+0
+Pay in
+*
+*
+I
+0
+Withdraw
+l
+Close
+account
+411
+person being trJined and <'t1l' ,1s ,1 i'<'f:-'1,n l""l\'111~ pn••
+moted to a higher rank. :\ luHirll' r1,I<':- m,n lw
+synthesized into anl,thcr stru..-turt' di.1~r,llll
+showing a selection of thL' possibk ,iclh iti<'S in tlw
+po sible roles that can be playL'd.
+Entity structure diagr,11ns rq't't.'SL'nt ,1
+sequence of actiYities ordered in tinll'. withl,ut c11n•
+currency, from the 'birth' of ,rn L'ntity tl, its ·d<\lth .
+One final problem addrl'Sst'd by tlw nlt'thtkfolt,gy in
+this step is that of the premature termin,lti11n 1,f llw
+life cycle. In the rl'al world, e,·ents m,1y 1,ccur th.it
+prevent an entity making an ordL'rh pnigr<'s...;ion
+through its life cycle. For C"\ample, a soldiL'r n1.1, tw
+killed in battle without procct'ding t1, rctirL't11L'nt. It
+may not be feasib le to draw a structur<' di,1gram fnr
+every possible variation on a prematurely krminated
+life cycle. JSD allows for ,, g<'nL'1-.1l
+specification of premature termination. This rL'c11gnition
+of such a circumstance is nn e"\amplc of
+'backtracking' in JSP.
+Figure 20.8: JSD structure diagram - customer with more than one account
+The end result of the entity structure step in
+JSD is a set of structure diagrams. cw entities and
+multiple roles for the same entity may haYc been
+generated during this phase.
+3 Initial model step
+In this third step the systems developer creates a model that is a simulation of the real world.
+For each entity defined in the preceding two phases a sequential process is defined in the modd
+that simulates the activities of the entity in such a way that it could be implemented on a computer.
+This is not to say that the implementation necessarily has to be computerized, mcrl'ly
+that it could be if this were required .
+In the model there will be a sequential process for each instance of an entity type, not
+one process for all instances. Therefore, if there are a hundred instances of entity type CUSTOMFR,
+there will be one hundred sequential processes in the model. Moreover, the processes notionally
+execute at exactly the same speed as the real-world processes. So, if a customer has a hank
+account for 50 years, the matching processes will also execute for 50 years.
+The sequential processes specified in the initial model step are documented both by a
+diagram showing the interconnection of processes and by a pseudo code definition of each
+model process. Pseudo code is a language similar to structured English, which was describl•d
+in Section
+12
+_
+4
+, but nearer to a programming language in type. The pseudo code is known ,ls
+structure text in JSD and resembles a high-level Algol-like programming langung<'. Structun'
+412 Methodologies
+a)
+Customer
+* Customer
+action
+I 1 I I
+Open
+0 0
+Pay in Withdraw
+Close
+account account
+(b)
+Account
+I I
+Open Operate Close
+account account account
+*
+Transaction
+I I
+0 0
+Pay in Withdraw
+Figure 20.9: JSD structure diagram - simultaneous operation of many accounts
+text exactly matches a corresponding entity structure diagram, and major constructs are
+sequence, selection, and iteration. The value of structure text is that it may be elaborated in later
+phases of the JSD methodology in a manner similar to the program design technique of stepwise
+refinement used in JSP. This process should be straightforward. An e ample of structure
+text for the ACCOUNT entity is provided in Figure 20.10.
+Process connection in JSD is achieved by either data stream connection or state vector
+connection. In data stream connection one process writes a sequential data stream, consiSting
+A(COUNl I If'</
+re~d d,,1 d \I re~m
+Chap er 20 Process-onen·ed mE'th.xk,loJ~ 4D
+of an ord('red <.et of me-,,,.age;;, and the ther rn~
+reads !hie; ,tream This i; ~imilar to pr ::e.-s 1.."l nnectic,
+n in a data flow diagram.
+01'1 I~ A.C(OUhlT, r1•,,d d,1t,i ~trr•,nn
+The JSD system specification diagram _ -o
+modeb the system a" a networ of interconnectl'd
+procei.!.Cl> showing how they communicdte \\ 1th
+each other. In the diagram (Figure 20.11) pr ~"t:.
+are shown in boxes, with the ddta :,tream:, th.11
+connect process.es sho·wn as a cirde \\·ith its identification
+gi,·en (in the example, the identificati n I.!'
+'C'J. Arrows show the direction oi data stream
+movement.
+01'1 l(Al I ACCOUI fl llr wh,/p (PAY· ll l or WITHDRAW)
+l lV\l'-J')A(.1101-J wl (l'AY• II ~)
+l'AY II~; "'ad d<1ta st r<'am
+TRAl~SACl ION at I (WITHDRAW)
+WI I HDRAW; t<·~d data strr>am
+TRAN'>ACTIOM r>nd
+OPLRAll ACCOUNT Pnd
+CLOSL ACCOUNT,
+ACCOUl'-JT 1 end
+Figure 20.10: JSD structure text
+In Figure 20.11 , a:qo~U:.R--0 i,, intended i..,
+represent a real-world instance of a Clli,tomer,
+sending messages about his or her actions tl, a
+process that simulates this behaviour (Ct.;STO\.IER-1}. A circle in an SSD indicates data stream
+connection. CUSTOMER-] is sending a stream of messages to ACCOl,:S.1 -l. Smee a customer can
+have many accounts, a double bar is used on the diagram to represent this multiplicity Dat.1
+stream connection is appropriate in the banking example, as it is not practical to telephone tht.>
+customer every ten minutes to find out if he or she has paid in or withdrawn money
+Jackson (1983} also gives the example of a lift system that find out whether a button has
+been pressed in a lift by linking the button via a state vector to a process that models the
+button's behaviour. The alternative state vector connection is appropriate here because tht.>
+button is essentially a switch, denoting an on or off state.
+Jn the stale vector connection, one process inspects the state vector of another pwce:"A
+state vector is the internal local variable which descnbe and is owned bY a particul,u
+process. Slale vector connection has no equivalent in data flow diagramming be.:,1use the d,1t.1
+flow technique permits process connection via logical files. There are no logical files in ,1 ]SD
+~0-.___c_u_s10.,..m_e_•r1_....,
+[ Acc~t-1 ]
+Figure zo.11: JSD system specification diagram
+414 Methodologies
+systt:'m spL'1.' ifl1.-.1tilm di,1~r.1m. Stall' Vl'l'lors nn' shown ,1s II dinmond on the SSD. In Pigurt• 20.12,
+the d;it,
+1
+rd,1tin~ tl, tlw ,KL'nunl is USl'd In produn• n n•porl. Normnlly a <.fotn stn•nm is uspJ
+where ,1 \ons-tL'rm vil'W nf L'Vt'nls is l'l'lJUin'd and ,1 sl,tll' Vl1C'lor u1-1ed when• a shorl-ll•rrn snnp -
+shot is t'L'quin'd.
+D,1ta stn-.1m 1.·01H1l'L'ti1.m is rnnsidcrt'd In Lw buff<.•rt'd (n daln slrcnm will be read on a fin;t
+in, first out basis), sn writing processes nrc 1wvl1r blorkc•d; n•ading processes may lag behind
+writin~ prncesscs. State vector umncclion is nlso u11buffcred, and "gain no blocking occurs.
+State vc -tor inspl' ' tion ll1l'rcforc 1.kpcnds on the n•lnlivC' spcc-•ds of Lhc pro esses involvl•d. lhb
+is not h·ue )t data stream connection. If there is more.' lhnn one inpul lo a process, rules must b(•
+spe' ified for determining whi h input is lo be tnken n 'XL Th' determination may be made• by
+fh,ed rules (fh d merge), or spc ·ified as part of the message stream (data merge), or determined
+simply by the relativ' availability of messages (rough merge). Such careful attention to syn-
+Account state
+report
+Account
+Figure 20.12: State vector connection between processes
+ACCOUNT-1 seq
+read amount-deposited
+OPEN-ACCOUNT seq
+balance·- amount deposited
+OPEN-ACCOUNT end
+read transaction:
+OPERATE ACCOUNT ,tr while {PAY-IN or WITHDRAW)
+TRANSACTION set {PAY-IN}
+PAY-IN seq
+balance:- balance + amount
+PAY-IN end
+read transaction:
+TRANSACTION att (WITHDRAW}
+WITHDRAW seq
+balance: balance - amount;
+WITHDRAW end
+,ead tramiict,on:
+TRANSACTION end
+OPERATE ACCOUN1 encl
+CLOSE-ACCOUN1,
+ACCOUNT 1 end
+Figure 20.13: Addition of functions to structure text of Figure 19.1 o
+chronization details is absent from mos t other
+methodologies. JSD also allows for time grain
+markers (T M) to indicate the arrival of particular
+points in real-world time (see Step 5).
+The end result of the initial model step is a
+systems specification diagram depicting a set of
+communication processes each of which is specified
+by a pseudo-code structure text.
+4 Function step
+The model created in the first three phases of JSD
+ha no outputs; it models the dynamic behaviour
+of the real world. In the function step, further elaboration
+takes place, and functions are added to the
+model to ensure that the required outputs are produced
+when certain combination of events on:ur
+The addition of functions may require no ch.1n~e
+to the SSD, in which case structure text is d,1bl)•
+rated to specify the functions rL'quired
+Alternatively, 1· t may b c necessar to creatl' nt.'''
+processeS, which are added to the SSD and spL't.'I•
+fied with new structure tl' t.
+To give ,1n e,,1mplL', we m,1y wish to
+~--irnvidl' lhl' (,11.'ilit in tlw b,111!-.ing application to
+ll1ll'ITlWn ,ll1.' L, US t onwr b,1l,111ccs on demnnuJ -
+l lwrdnr1.' tu 11 l ·t ions. must bt• added to tlw exi.s ti·n g
+SSL) ,md structtirt.• lL' t that record and display
+acn,unt balancL's. The l'laboration of the AccouNT
+ll' ·t t·s ·s hc>w n 1· 11 F igurl' 20.13. Clearly, the sta te
+Chapter 20 Process-oriented methodologies 415
+H' ' l1.w of \t.'c'c)LJ r · t
+now me udcs knowledge of the customer's balance, because the structure
+lt''\.l h,1s be' 'n c'l,1boralcd to und He th"t b I _ Th SSD b d d ( · p·
+r ' " a ancc. c can now e amen e as m 1gure
+")l1. t-t.) tl) show thl' 1w, intc'r, t· · 1 ogu ton process. JNl J:RROCA"fl ; can mspect the state vector of any
+\1.: 1..)LJ 1- lnroccss(1si11i·1 ,-1t :ll d'
+r '· ' · 1.. l, cc 1Y a 1amond symbol). It will do so when it receives a message
+sp1.' 'ih inp, ,m ,wcnunl cnquir , and it will produce an output showing the balance of the cush)
+nwr s •1 'l..'l..)unl. Thl'r ,fore, the addition of functions to an initial model may cause the
+t'l.1l or,1tion of L' isting stru ture texts and/or lead to the specification of new processes with
+tlwir L wn structure t >-.ts.
+\ \1hcrcas thE' model of processes and their input and output data streams correspond to
+tht.' t asic system and are fairly stable, the functions represent ancillary processes and are likely
+k 1 b' less stable. The relate to reports, queries, and the user interface, which might change
+mu 'h mop frequently, but the partitioning of parts of the system that change frequently into
+!:i parate function i relatively easy to carry out.
+While the earlier versions of JSD did not provide many guidelines regarding data
+analy is, later versions do require the identification of attributes relating to entities, and these
+are referr d to as fields of the state vector record. Update procedures and integrity constraints
+are al o defined. However, data analysis is not as complete as in other methodologies in that,
+for e'\.ample, it does not suggest normalization.
+The end result of the function step is an amended system specification diagram with
+as ociated structure texts.
+~@-----+~_c_ust~om_ er_-1_~
+4. 5 t specification diagram " · h interrogation process figure 20. 1 • ys em
+416 Methodologies
+5 System timing step
+The JSD modelling process so far described has not yet explicitly raised the question of speed
+of execution of processes and their timing. Implicitly, the model must lag to some extent behind
+the real world because input must take some time to arrive. In the system timing step (sometimes
+included within the function step) explicit consideration is given to permissible delays
+between receipt of inputs and production of outputs. Different parts of the system may be
+subject to different time lags. Timing is important both within a process and between processes.
+JSD uses messages known as time grain markers which act like data streams but which contain
+timing information. They are rough-merged with other data streams to control the arrival of
+messages and the timing of the execution of processes. They are used to trigger actions within
+processes, start and stop processes, and generally aid the synchronization of processes.
+Time constraints will derive either from user requirements (e.g. for a monthly report or
+for an immediate response to an enquiry) or from technical considerations. Examples of the
+latter are state vector retrievals that must be sufficiently frequent to capture changes of state (as
+in a process control application) but not so frequent that they capture too many instances of the
+same state. The system timing step will gather information usable in the next phase when
+decisions are made. These decisions may concern questions relating to online, real-time, or
+batch implementation of aspects of the model system.
+The end result of the system timing step is a specification of timing constraints using the
+TGMs associated with processes. The step does allow for the addition to the SSD of synchronization
+processes whose sole function is to ensure that certain actions have been completed
+satisfactorily before a further process is initiated.
+6 Implementation step
+Jackson's (1983) account of systems implementation is not a comprehensive treatment of all
+implementation considerations. Moreover 'implementation' in JSD includes activities that
+would be regarded in other methodologies as 'systems design', for example, file and database
+design, although JSD does not describe these processes in any depth.
+The JSD implementation step concentrates on one major issue, the sharing of processors
+among processes. A system specification diagram can be directly implemented by providing
+one processor for each sequential process. Since there is one sequential process for each instance
+of an entity type (e.g. one for each customer of a bank) this might imply many thousands of
+processors. If this is an unacceptable implementation of the model, then the implementation
+step provides techniques for sharing processors among processes.
+The direct opposite of providing one processor for each process is to provide one processor
+for all processes, which could be provided by a centralized mainframe computer. In this
+case, JSD provides for a transformation of the model into a set of subroutines. JSD is not recommending
+computer users to write their own operating systems and teleprocessing monitors,
+however. If these items of software are available on a machine and match the process scheduling
+requirements of a system, then Jackson would recommend using them. In fact, most
+computer-based systems are scheduled by a mixture of administrative, clerical, and software
+action. The structure diagra f
+Syste b t h
+m or a scheduler can be drawn alternatke ,,, to renr~ ~t ur
+m, a a c system or a . J •r'
+formed b h b . , mixture of the se' to geth er wi-th ac.h-ons that fl'. ay, ir faa, ve pery
+uman emgs.
+The JSD systems implementati ct· - -
+1
+ld h . on tagram (or SJDJ 1s, m a way, an aostrac.fo:~ of i. ~
+rea -wor sc eduhng possibilities F
+. · igure 20.15 shows the sequence of processe:; me-ra-c.f:fa .. ·:
+the scheduler 1s next to the to (d ✓
+P rawn as a vertical bar in a box); the prcx:.esses (wri ~ ::lE:C -.
+Buffer
+Scheduler
+Process-1
+Process-2
+Process-3
+the SSD) are also shown in boxes; inversion S€q"'Jef.«:s (j.e, ·A.e : :erarchy
+of processes in terms of a main pnY4arr. calling s: ... r.vrc;gr,cs
+are shown as paralJel lines representing the data strearr as a ?"':"'l' ~
+use data contained in a state vector file (soft boxJ ard dzifu ~'.'ea:::::. is;
+buffers. Therefore, if we return to the banking e:.(a;-tl_? e, £>,.,.E: ocf'~~
+could represent a data stream of credit amounts., wi ,1 ne pr'(/'...es.Sl::S
+arranged hierarchically as deposit, interest beir.g addE:d, arc c~account.
+The state vector file in this example provides dafu uxN • ~"'
+rate of interest. The scheduler handles the m:erall Seq"Jenc· g, a-1/J # , -
+can be represented as a process structure dfagrarr: and ass • x -e te/..:..
+The system may be implemented by one or rr.ore re:a :- orJ:Ssors,
+thus giving rise to possible implementations t:.a-:. -a~ge !:-or.;
+completely centralized to completely distnbuted. In genr-a,-:-- ..... ·- G,
+instances of common processes would share process !:exts (i.e, p-c;-grams)
+as well as processors. To make process text s:1arL'"'g ;,ossw e, , -
+is necessary to separate the state vectors of processes frorn ~ ~'lcred
+Figure 20.15: System implementation diagram process text. A concatenation of state vectors is then :ransfon: ~ ·-:o
+a file or a database. Therefore, the implementation srep fa JSD ca. give
+rise to perfectly conventional data processing solutions, and the information providea , -~.(::
+above steps gives the programmer all that is necessary to code the system using JSP proa:c • es.
+JSD's strength as a methodology lies in its determined and detailed attemp w mode --.e
+dynamic aspects of real-world systems. Its treatment of concurrenc~/, timing, aT'd proces.scheduling
+is far more comprehensive than any other methodology discussed in ... 15 000,- ----:'le
+model is, as far as possible, kept up to date so that it is always a fair reflection oft. e rea· ;.•: •
+that this abstract model represents. In this way, it is possible to see what is happening in ~ne
+real world and address it in the decision-making process. Entity modelling, it is argued,
+represents a static view of the real world, whereas this process-oriented approach is dynamk.
+It is, however, self-consciously incomplete as a methodology. Jae wishes to sa_.
+nothing about areas that are satisfactorily treated by other methodologies, onJ.; those hat aie
+not. Jackson is critical of methodologies that rely on structured decomposition, on the grounds
+that they confuse a method of documenting a design with the design process itself. JSD LS not
+top-down design. Jackson is similarly critical of data modelling approaches: 'ft is not much
+more sensible to set about designing a database before specifying the system processes than it
+would be to declare all the local variables of a program before specifying the executable text:
+the two are inextricably intertwined' (Jacl<-son, 1983).
+418 M thodolog1es
+Summary
+• In this chapter we have described three methodologies
+that we have 1dent1f,ed as being
+process-oriented These are also cal,ed structJred
+systems analysis approaches.
+Questions
+1. Identify the key elements of each of the met
+in this chapter
+2. Cor!st ruct a table that highlights their differences
+common aspects.
+3 Pick one of the methodologies c3nd 1dent1fy important
+elements of systems development that might be
+m1ss1ng.
+Further reading
+Gane, C .ind ~ar o· · , :; ~ :,tr•1t:.t11red Systems Analysis. roofs
+and Techniques. Prentice Hall, Englewood Cliffs. New Jersey
+Jackson. M. (1983) Systems Development Prentice Hal l. Heme\
+Hempstead. UK.
+Yourdon Inc (1993) You,don Systems Method· Model Driven
+Systems Development, Yourdon Press, Englewood Cliffs. New
+Jersey

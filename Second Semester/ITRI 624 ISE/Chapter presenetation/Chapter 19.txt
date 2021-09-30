@@ -1,0 +1,1228 @@
+19.1 Introduction
+Over _several years, softw.are support tools have been available that help the information
+systems development process as a whole, not just in the drawing of some
+individual diagrams. These were generally known as CASE (Computer Aided
+Sys tems (or Software) Engineering) tools but we use the term information systems development
+toolset or, more simply, too/set for:
+Any integrated computer software system that is specifically designed to support a significant
+part of the information systems development process of an information system
+and the management of these tasks and processes.
+Whe reas the tools discussed in Chapter 18 in the main support one type of activity in the information
+systems development process, for example, project management, group systems work,
+or drawing diagrams, toolsets support several tasks; indeed, they provide a full set of tools for
+the analyst.
+Originally CASE tools were divided into Upper and Lower CASE tools. The purpose of
+this distinction was to indicate which stages of the life cycle they addressed. Upper CASE
+includes tools that helped the strategy/planning, analysis, or logical design stages, whereas
+Lower CASE tools were concerned with aspects of physical design, programming, and
+implementation, including automatic code generation. Most toolsets now integrate these
+elements into a single, fully integrated development and support facility.
+Integration in these toolsets is particularly important. They are integrated both horizontally
+and vertically. Horizontal integration is the integration of different tools at a particular
+stage of the development cycle. At the analysis stage, for instance, there are a number of different
+techniques which are supported by the toolset, for example, data flow diagrams, entity
+models, function decompositions, and so on. These are regarded as horizontally integrated if
+information is shared between the tools and if changes made in one diagram (using the
+diagram support tool) are reflected in the other diagrams, where appropriate.
+Vertical integration, on the other hand, is the integration of tools between different
+stages of the life cycle, and this means that the results from one stage should be available in an
+automated form to the other stages. The results should be capable of being passed forward to
+362 Tools and toolsets
+subsequent stages of the life cycle (known as forward integration). Further, for highly integrated
+tools, the results or changes made at later stages of development should be capable of
+being passed backward, and be reflected in, earlier stages. This is known as reverse integration.
+Another important aspect of integration is interpersonal integration. System development,
+in organizations of any size, is a matter of co-ordinating the work of many people and
+perhaps many development teams, frequen tly in different locations. Additionally, the work
+may be performed in parallel, at least within development stages, and possibly in parallel
+across stages. Toolsets should ensure that the work is co-ordinated and consistent. An
+important aspect of this is version control; that is, the organizing and handling of the large
+numbers of different versions of systems that exist.
+Figure 19.1 presents a generic integrated toolset. In this chapter we look at Information
+Engineering Facility, Oracle and Select Enterprise. Following this, we provide an evaluation of
+toolsets. Before doing so, however, we discuss one of the key features of toolsets separately.
+This is the repository, seen to the middle left in Figure 19.l. This is so important because it
+enables the integration of all the models, definitions, and mapping of stages.
+The precursors of systems repositories were data dictionary systems (DDSs), software
+tools for managing the data resource. They enabled the recording and processing of 'data about
+the data' (metadata) that an organization uses. They were originally designed as documentation
+tools, ensuring standard terminology and providing a cross-reference capability about
+□ □ Workstations/ PCs
+Repository ~ ~mmun ications
+~ ,.______., Import/
+export
+Data
+. Toolset .
+~
+Other systems
+Rules
+I I I I i
+Consistency Code and
+Models Editors database Prototype Version
+checkers generators tools control
+Graphics Project
+Reports Analysis screen management Configuration
+interfaces support tools
+Figure 19.1 : An integrated toolset: generic
+I •
+Chapter 19 Toolsets 363
+data (and later processes) at them . . .
+d
+1
+d . odelhng and implementation levels. They have subsequently
+eve ope mto systems repositori .
+. f . eS, which provide a central catalogue for all aspects of an
+m orrnatton systems developm t .
+th diff en project, containing all the information necessary to integrate
+e erent stages of information systems development.
+The repositories will no rma1 1 Y conta.m i. nformation about the physical and operational
+elements of data and processe s, f or example, physical data items, processes, modules, code, and
+test data, and information ab ou t 1o gI.C al and functional levels as well, for example, data and
+process models and diagrams. But they do much more than that.
+Active repositories con t am· m· f ormat1. 0n that enables the rules of a techni. que or an i. nforma
+tion systems develop ment meth o d ology to be appli.e d. These may permi. t analysi.s ,
+validation' and consiste ncy and comp1 e teness checkm. g. There may be a separate element of the
+repository (sometimes known as the repository manager), in which knowledge or rules are
+embedded. In some repositories these 'rules' (which could be the rules of the methodology) are
+locked (or hard-coded) into the repository. In other repositories they are more flexible and
+easily changed or defined in an expert systems language. In theory at least, therefore, a repository
+contains everything needed to support the creation and maintenance of information
+systems in organizations.
+Repositories do not store diagrams as such, but a series of definitions about the objects
+in diagrams. This means that objects that appear in more than one diagram are only stored once
+and that diagrams are generated from the current information in the repository, as and when
+they are needed. When changes are made to one diagram, the effects of that change are automatically
+reflected when other diagrams in which the object appears are generated. This
+enables the basic repository information to be displayed in a number of ways according to
+needs. For example, an object may feature in an entity model, a data flow diagram, and an
+action diagram (see Chapter 12).
+The repository can contain information beyond that which is needed to create software
+systems and include models of the organization and environment, that is, the framework of the
+systems. This is a view of the organization in terms of business areas, functions, hierarchies,
+departments, locations, strategic relationships, critical success factors, objectives, plans, and so
+F
+. 19 2 shows another view of the repository reflecting the enterprise information and
+on. igure .
+. • to data and processes in the information system, showing the mappings between
+its mapping
+them.
+Many repositories are themselves relational databases, which reflects the dominant technology
+when they were developed. This is now somewhat inadequate, and one based on an
+. . t d database management system is likely to deal better with the wide variety of
+obiect-onen e
+h i·mage voice and graphics of multimedia systems.
+data types sue as , '
+19.2 Information Engineering Facility
+. E • m· g Facility (IEF) is an example of an integrated toolset or CASE tool. It
+Information ngmeer
+. .
+11
+d l ped by Texas Instruments to support the Information Engineering (IE)
+was ongma Y eve 0
+( S ti.on 21 3 which might be read in conjunction with this section). IEF was
+methodology see ec · '
+364 1 ol nd tool~cts
+Enterprise
+information
+Data
+Relat1onsh1ps
+Figure 19.2: Repository with enterprise information
+Level
+Conceptual
+Logical
+Processes
+Key
+Links between
+~ data and
+processes
+I
+Mappings
+between
+levels
+renamed Composer and bought by Sterling Software in 1997 who were themselves taken over
+by Computer Associates in 2000. It is now known as Adrnntage Gen and is marketed as a rapid
+application development tool which generates code from graphical business process models.
+The toolsct has been enhanced and expanded and now supports component-based development
+(sec Section 8.5), cl ien t-server and web-based development (Section 7.5) and the
+generation of C and Java code. In this section we examine IEF as a generic example of an integrated
+toolsct rather than a specific prod uct and concentrate on the concepts embedded in such
+a toolset.
+IEF supports planning, analysis, design, construction and implementation. These three
+elements arc integrated via an encyclopaedia (the IEF term for the repos itory). The main encyclopaedia
+was originally designed to be held on a centralized mainframe but now runs in a
+client-server environment. lEF is described as being ' integrated', and this means that across the
+toolset there is a common look and feel, the use of an encyclopaedia to enable consistency, and
+the automatic generation of objects and code from higher-level objects. We will consider each
+of the five aspects.
+1 Planning
+The planning software is designed to support a strategic approach to systems development following
+the identification of high-level business requirements. It helps in the production of three
+architectures: the information architecture, the business system architecture, and the technic,il
+architecture. First, planners build a subject area diagram, which is a high-level entity m11dd l11
+Chapter 19 Toolsets 365
+th'- :-ul'J ·t Mt:'as of intere t to the business. The data modelling tool enables the users (usually
+d'-~ ·nl't:'d as f \armer ) to build the subject model and Yiew the whole model or individual
+sub,~ ·t areas which can then be 'exploded' to reYeal the component entity types of the subject
+.lft',1. The t L11 ensure. con istency across the diagrams and shows any relationship aggregation
+lttk'S. A relationship a 0 gregation line represents a relationship ben-veen entities in different
+::ubj ·t area_.
+Plannec al o on truct high-level function hierarchy diagrams using the activity hier,1rhY
+iiagranuni.no- tool, which enables the functions and their position in the hierarchy to be
+..:ai: tured and displayed in Yariou way . The activity dependency diagramming tool is then
+used to dL ument the equence in which the functions must be performed, "vith arrows indicating
+the direction f the dependency showing what function must occur before another.
+There i.:: also an oro-anizational hierarchy dia~amming tool ,vhich enables the construction and , 0
+manipulation of an or0 anization chart. Finally the matrix processor enables various interactions
+to be identified and depicted.
+The matri\. pr ce or can be u ed to how the interactions between any two sets of
+thin _, but particular upport i provided for -10 standard matrices, which include objectiYes,
+strategie , goals, critical ucce factors, entities, subjects, and functions. The tool is basically a
+two-climen ional matri\. (Section 12.7) "ith, for example, functions as rows and objectives as
+olumns, and an entry is made in the releYant cell when a particular function supports a particular
+objecti, ·e. The matrix may reveal that some objectiYes are not supported by any
+functions, and therefore that objectiYes ha,·e been lost, or that only one or two functions
+upport the majority of the objectives and therefore these are the key functions. Planners use
+uch matrice in a , ·ariety of ways, and the software makes the comparison and analysis that
+much ea ier. One important use of the matrix processor is to plot the interactions between functions
+and entities, that is, which functions affect which entities. This may be create, read,
+update, or delete (CRUD) (see Section 12.7). The matrix processor is also able to cluster, and this
+might lead to the automatic production of a new matri>.. where all entities affected by a particular
+function are clustered together.
+The diagramming software for planning i integrated. Once, for example, the entities are
+entered using the data modelling software, they will appear automatically in the matrices concerned
+with entities. This means that elements are only entered once, and when they appear in
+a matrix none \\ill be ' forgotten'.
+2 Analysis
+Analysis refines a particular area of the business identified in the planning stage, and any
+information captured in the planning software i automatically aYailable to the analy is oftware
+using the encyclopaedia. In this tage (busines area analysis in IE), anal~ ts enter
+further details, often using the same software as in the planning tage. Fore ample, the subject
+area diagram is expanded into an entity-relationship diagram u ing the data modelling software.
+Relationships between entities are now defined, including their cardinality and
+optionality. This is done by the use of dialogue bo e within the tool, as is the definition of the
+366 Tools and toolsets
+entity attributes and properties. The user can specify entity subtypes, and the diagram
+can 6e
+viewed with these expanded or contracted. Functions are further refined into a series of
+1 owerlevel
+processes using the activity hierarchy diagramming tool. For each process, the software
+enables details to be entered. These details will include name, description, type, and any entities
+that the process uses. Similarly, the function dependency diagrams from the planning
+stage are expanded, where necessary, into a series of process dependency diagrams using the
+activity dependency diagramming software, and details of events that trigger processes and
+relationships with external objects are added. Some further matrices are also produced using
+the matrix processor.
+The elementary processes are then defined as action diagrams (Section 12.8) using the
+process action diagramming tool. The action diagram defines the steps required for each elementary
+process and the way that they interact with the entities. The software automatically
+begins constructing the action diagram using information derived from other diagrams, such
+as the entity model, the process hierarchy, and dependency diagrams, and the analyst can insert
+extra actions and manipulate the action diagram as required. The process action diagramming
+software applies action diagramming rules and only allows entries that are semantically and
+syntactically correct. The information for checking semantic correctness is derived from the
+earlier diagrams represented in the encyclopaedia. In addition, the tool allows processes to be
+'synthesized'. This may be achieved by the software asking certain relevant questions to clear
+up areas that have not been completed or, in certain circumstances, by automatically generating
+process logic based on the entity model and information from the matrices. For example, if an
+entity REGISTRATION has a compulsory one-to-one relationship to entity STUDENT, then a certain
+action logic is implied by this that can be generated by the software. All this provides the detail
+of the process logic upon which any subsequent code generation will be based. In certain situations,
+IEF can be used in analysis without the preceding planning stage having been
+undertaken, in which case all information is entered from scratch in the analysis software.
+3 Design
+In IE terms, this includes support for both business systems design and technical design, and
+the design software enables the designer to take the results of analysis and transform them into
+designs. The first stage is for each process to be transformed into a set of procedures by the dialogue
+design software. Dialogue flow diagrams are produced, and the software allows the
+designers to specify control and sequences of screens. Next, the screens themselves are
+designed using the screen design tool. This will automatically produce an initial attempt at the
+screen design, based on the information in the encyclopaedia, which can then be modified. The
+software also attempts to provide previously defined screen elements to the designer and so
+encourage consistency in design. Indeed, designers can create templates that enforce standards
+across applications. The screens are then prototyped, showing the layout and flow of screens,
+and input validation can also be performed using the tool.
+The process action diagrams from analysis can also be converted into procedure action
+diagrams using the action diagramming software. Designers can specify the detailed logic
+Chapter 19 Toolsets 367
+statements ,,nd associ,1tc nr rnL · e·s·sc,s. "1•' ti1 cnmm,mds from tlw keyboard, speo' fy run-t1'm e error
+wutincs ,1nd so on. A,>1in 1s 1·1, ti . . • J "f' t ti'al "' ' ' • 1l' process ,wllon d1agr,Hns, the softwar(' mentt 1es po en
+t'ITt>rs and prL'Yents lhL'm occurring.
+Lnr tt, thi•s •s t'w"c , thl' l: \u•·,1 g·, n I1 as l) l'.'L'n at the log1C.il level and not dependent on any targe t
+h,1rd\\· ,1renrs•l )ll\\1r' l'''t'~\ ·1' ·1·\)t'•l 1,t':' n t . 1·c cJ 1 111·c c.1 I L:I l'!•·n gn now requ 1· r es t he b us m· ess systems d es1· gn
+tt, h:- t,,k.t•n tL) tlw iw,t stage, which is physical design where the target environment is specifil•
+d. l smg the softw,ll'l'.', the designers can specify the target environment and the constraints
+th,1t this implies. Common specifications are already stored in the encyclopaedia. Physical
+tksi~n is then initiated, and the data model is transformed into a physical database design of
+recLwds. fields, link.ages, entry points, and so on, depending on the actual database specified in
+the pin sical en\'ironment. These would be tables, rows, columns, and foreign keys in a relatil1nal
+database en\'ironment. The physical design can be modified and tuned by the designers
+J.S necessary, usually for performance reasons. Such changes do not modify the conceptual
+designs and only changes as business requirements change the logical models.
+4 Construction
+The ne'\.t stage is construction, and the automatic production of complete application systems
+by the generation of code. The software supports the generation of code in a number of languages
+and embedded SQL calls to the database. The tool also produces screen definitions,
+graphical user interfaces, database definitions, referential integrity triggers (to control database
+deletions), and a transaction control program. The code generated is based on the logic specified
+in the action diagrams and the entity models.
+De\'elopers can test and modify the code without tampering with the source code.
+Changes are made to the code by changing the action diagrams (or further back in the analysis
+s tage) and regenerating the code. The software 'remembers' any changes made for tuning purposes
+and then reapplies them to the regenerated code. Further, for small changes, not all the
+code needs to be regenerated and, using various dialogues, the developers can specify which
+components require regeneration.
+5 Implementation
+Finally, the implementation soft\•nre (,,vhich resides on the target hardware) enables the inst,11-
+lation of code and database on the computer. This includes the compilation, link.ing ,111d
+binding of the application, and the allocation and building of the datubasl', plu-; ,1 t,11:11it, th.it
+enable!> the runmng and testing of the application on the t.1rget rnmputL'r.
+6 The encyclopaedia
+The l'nn·dop,wdi,1 b tlw Kl')' lo l l"F ,111d l'n,1bh•!-> tlw st1mng lll n1tidl'ls, tlw Cl111,·urr,•nt ust.' l,f
+the!->t' models thl' progrl's:,1011 lnlln 01w sl,l)!,l' Ill tlw lll'\I, ,111d llw t1-.m-.t,H·m,ll1llll llf tlw mndt.'ls
+ullimc.ltl•l~ mto nimpll'll' d1•,·l•lopl'd ,1pplil',1till11s. l lw m,Hn t'ncydllp,wdi.1 rl'sidl•;, on t11l' sern~r,
+and !->Ubseb of till' tnlllki,- c.in lw d1i,,·11lo,1dL•d lo work. ... 1,11i,>n dil'nb to l'n,,blt• md1, 1duc.1I work
+and to enable teams to "orJ.. on dl'\ L'iopnwnt-. cnncurrl•nth \n\ d1,1ngt''- to models are then
+368 Tools and tools ets
+uploaded back to the main encyclopaedia in a controlled way from the local enc I .
+ye opaed1as to
+ensure consistency. The encyclopaedia also provides version control which means th
+' at multiple
+copies of models for different purposes can be stored and used without confusion.
+The encyclopaedia stores definitions of models rather than graphical representations of
+the model, and therefore the software uses these definitions to produce the diagrams that are
+required. Many of the diagrams are based on common information, and this enables a high
+degree of consistency between diagrams as they are constructed as and when necessary from
+the stored definitions. This also enables any changes or updates made by developers to one
+diagram to be reflected in other diagrams automatically. For example, in an entity diagram, a
+change to a relationship between two entities from optional to mandatory will automatically be
+reflected in all other diagrams that use this information when they are next displayed, because
+they will access the one definition of that relationship in the encyclopaedia. The storing of definitions
+in the encyclopaedia rather than the storing of graphical representations not only
+enables models to share information but allows the information to be passed forward to subsequent
+stages easily.
+The encyclopaedia also enables consistency checking. This can be initiated at any stage
+and on the whole development or subsets, such as an entity model, functions, processes, action
+diagrams, and so on. Some checks are enforced when information and definitions are entered.
+For example, an attempt to use the same name for two functions or entities would be highlighted
+as they were entered. Other checks will only be made upon request or before
+proceeding to a subsequent stage. An entity model, for example, would be checked for completeness,
+in that it has attributes and relationships, and that these are consistent with the
+functions and activities defined, before proceeding from analysis to design.
+In this section we have concentrated on the functions of IEF that support the development
+of applications following the Information Engineering methodology. As a product,
+Computer Associates have developed Advantage Gen to be appropriate to a wider range of
+application types, including application integration, web services and links with other tools
+(see CA, 2005).
+19.30racle
+History
+In 1979, Oracle was the first commercial relational database based on the relational language
+SQL. During the 1980s the company developed its database software. Through this tool in particular,
+Oracle became the second largest software company in the world, after Microsoft
+(Sections 18.3, 18.4 and 18.5 describe only three of its software packages) and before SAP
+(Section 9.3). Originally Oracle consisted entirely of the relational database system and a few
+trappings. It was designed to be used by professional programmers. Later in this period tools
+were provided to be used with the Oracle database which made it easier for use by users as well
+as IT professionals. CASE tools, similar to those provided by Information Engineering facility
+(Section 19.2) were provided. The major difference, however, was that IEF was designed as a
+toolset supporting one IS development methodology, Informat1. 0n En gm. een.n g. 0 rac le's tools,
+Chapter 19 Toolsets 369
+on the other hand, could support many methodologies. Oracle users would purchase the databa~
+e, but it was possible to purchase some tools that make up the Oracle product range but not
+others
+During the 1990s there were a number of toolsets, each ·with its suite of tools. These
+included the Oracle database suite, Designer/2000, Developer/ 2000 and Discoverer/ 2000.
+Other tools provided are outside the scope of this chapter. Many Oracle applications are developed
+in a PC-Windows environment, but Oracle has been designed to run on many
+hard\\·are software platforms. In this section, we will discuss this range of products and then
+discuss the present enterprise grid architecture, released in 2003. A full discussion of Oracle
+\,·ould require several books, so we provide here an overview of features particularly relevant
+to the IS development process. Even so, we omit many interesting fea tures, such as the customer
+relationship management suite (released in 1998) and the web development suite
+(released in 2000). In particular, we also omit discussion of Oracle's ERP environment,
+including customer relationship management. With its Project Fusion, Oracle's former ERP
+application suite is being merged with features of its acquired companies JD Edwards and
+PeopleSoft. You are encouraged to explore the website at www.oracle.com. There are some
+interesting presentations (video and/or sound) included in the site.
+Oracle 2000 suites
+Designer/ 2000 v,'as formally known as Oracle CASE, and is helpful in data and process modelling.
+De,·eloper/ 2000 is used to build an application, once it has been designed using Oracle
+Designer/ 2000. Discoverer/ 2000 consists of a suite of user-friendly query tools designed for adhoc
+reporting. The Oracle Database Management System is central to these tools, though many
+end-users are hardly aware of its presence. We will first look briefly at the Oracle Database
+Management System and then look at Designer/2000 and Developer/ 2000.
+Oracle Database Management System
+Being a relational database system, we see data expressed in rows and columns. The main
+method of communicating directly with the Oracle database is by using the SQL language.
+Although this stands for Structured Query Language, it enables the experienced user to do more
+than just handle queries. It is certainly easier to use than conventional computer programming
+languages, but it is nevertheless not easy to use by untrained users. There are extensions to the
+basic SQL language provided in Oracle and together they form PL/SQL. The SQL optimizer
+attempts to make each SQL statement as efficient as possible when executed. SQL procedures
+can be triggered by certain events, for example, after updating or deleting a record (row).
+The security features are now very sophisticated; you need system privileges to access
+the database and object-level privileges at different levels to query, insert, update and delete
+any object stored in the database. Security also implies the ability to roll back to the previous
+database state should there be a problem with a particular transaction. Data is validated
+through data constraints, that is, only allowing permitted values of data to be entered into the
+database.
+mcnt 'vil
+111 \ 1 u 11B.i I nd f r r
+of mform.it1 n bout bu
+In moddlmg
+h1l'riln.l11l , d.it flm\
+t ,m1pl<', to er
+f;l\ t' onh oil(' t pow i: r
+i.t,111d,1rd n.:porb ,llld there r
+!>l t up, m, 1111.1m ,md u ti t' rep< 1l r,
+Ilwn• ,., , g, n, r
+str,unt ,md Ml u1 1 ldp I prm 1d
+n•l.1111111,lup md oth, r poh.:ntnl d;it
+,ll'iO 11ppu1 kd th..11 (,111 ,pc 1h ',(_f• n
+111 tho:;<• pw, 1dt•d Ill till ~ h, n >II
+lr \1
+n al be u ed to~""" r.1k oth, r pn
+Int.'\ bu ld up nd n-qum .1 t:nlr, l en \ l •p xt
+,, II , thi: d.1ta rt un <'
+urportm t~ht\ rdJhl n htp furxti n
+ln i.'l'l. , .tbo hdp l<> dc:'foll' m.1tn l"i tor
+"1th attnbutt ,md "rtlt' r f rt-. 1 o
+tht n-,-,os I n rerortm. tool h.h Ill in• th m I )
+p \ 1d ~ l l h Ip th • d.1t.1b.:1'4.' .1dn11n1,tn11,r
+lo g,•nt:rah• th,• d,1t,1IM'l' ,md ,tpph 11101
+strudun-. 01 t'.l h moduli• .md Ill.Ill\ t th, r t.1
+, moJult• dt lrn1tio11-. Ml'
+r.tm \\ 11 rd-. 1nul 1r
+I 111 •utdt• th · le-.1 •rwr
+upport de-;lgnrng th,
+umutt.lht n 111 lit• •,•1wr 11Pd 11
+lhl' "am, hnw, mdudmg UStr t1nd tr,111u11 • m.tnu.il upf'X•rllng &1 br,m 1 1t.1rnr
+111< thodolog, su h n lntonn.111011 I ngmt•crmg, th t x,l-. l 111 be u I fur r,1p1d ,1pph 11mn
+d,•, ,·I, pnwnt (l h,,pll'r 7) .111d oth, r appr l he-, lltc pr t moddlu I'> dL'-;tgm'CI lo support
+hll'>lll<' s process r,•-..•ngm,,•rmg ,md fl'\ t•r....· en •mec rm of t' L'itmg \ ,tt n1., b n prt l'nltng
+tll,• <'5,,<'flll,11 ,hpl 1-. of ,·a h proc,
+I lw fom1'i g,•1wr,1tor lOllll'S ,, 1th ii numb< r of t,1nd. rd form tC'mplatl"> th,11 ,lll bt: cu.,
+lllllllll'<I lor C'ilC'h form l onslr,11111-. tiln l\t• a,id. i to L'll urt d,1ta , ntl'\ usmg th,· form., ,.,
+, ,1lid,1!,'d, su, h ,1 ,1 r.in ,., of mm1,•n, , ,1lul'S or llllt' of ,11L .. 1 o pos-!>1b1ht1l'<; pro, tdt'<f 111 a ornbo
+bu,. ">1111tl.uh , th,·rt' t!-. ,1 r.•ports gl'll<•rator \\ h, h \\ hC'rt \ l'r p 1ble h.:t!-. a s1m1l, r look nnd ll•rl
+lo th,• ltunh g,•11,•r,1t.11 It 1s possihl,• to '<' thl' )[ statemL'nls gtncr,1lL'CI and moJ11y this g,•nl'rat,•
+d pr.,gr,1111 d1r,'< ll). l 1ra I,· l)(-.1gncr :!000 can also be u~ed to gener,1 lt• progr,111b 1n
+\'i-,uall3,bit ,ind nwit• r,"Cl'nth 1H•b ,1pphtat10n-. u mg thl' \\ebsen,•r ge,wr,1tor and charb
+u-,mg th,· gr,1ph1 .... g,•1wr,ll,1r.
+01 cour-,L•, -..uLh lt\til-.. .ind diagramnwr-.. can onl) ,,upport information") -.tl'ms d1•\ ,•lopment,
+the, do not do ,n,·a) with thL• nec,•-.-..it) llf having J good :,trateg) for ,tpphcallon~
+d,•,·l'lopmt•nt, good planning to carry out the -.trdlt.~)'. good tact-finding pnxedur,•s ,llld com
+munications, and good analy-..i-.. and de..,ign.
+Developer/2000
+rhl· mc1in f,•,itur,•.., of this den.>lopment !-Uite are Oe\'elopt>r/2000 Forms, R,•ports ,llld ( ,r~J h•
+th
+.,t run wilb ih
+t• Orad,• DBMS ,ind the application sen·t•r. This lattt•r tool larOl."S out th, rr'(I
+Chapter 19 Toolsets 371
+I l''-.~,111)', 111111pd111 I' 1111 • 1( •11111 I•, .
+, i l1 , ,111<1 i., 1111<')' . I I . I I
+1 ,1 I 1< 111•, ,1• , \\, •II 1. 111 . () 1 . •1' 1 <'< wr I 1 I H' W<'h S(•rv1•r, for Wl•b-based appli-
+• ., < 1" 1 <' l>HMS
+< 11,1< 11 • I l,• 11 ,1 11 111,1 1()()()
+11
+shnliltl h<• n•11 11•111lw1<•d th.it th(• toolsl'I rnmprising
+I (ll1S1'1(<, of l'l'I
+11111 1,• iii\ I. 1 y powi•r·l1tl , lonipl<·x c111<I sophisticc1h•d C'll'ffi(•nts and is
+• , i ., ,1;111•1 101 1'11• ('tlll 11:-.1•1, wlio. . . .
+"tilt I I I I is llll1d1 h< •ll<·1 :-. urt<•d lo llw l>isrnv(•rn/2000 toolset I ... I ,1 ,I lill\\'!',\'I .IIHI d.11.1 ( 11('1 . . ,
+. • . II
+I
+tool-. . h1t lh<'r, lo op<•1\1ll' tlwsC' ,1pplttations efficiently
+I( '111111,.; ,I I\(' d1'',l/'IH'd lll'l•lnll j
+1 ' , ''' ('( dlld 11011 11 ,. I I I ·1·1
+" 1Zl'I'' 1 < ,1l,1 1,1-,1'. w Ort1cle toolsct supports the Ill Ill ( 11111 Pl ', 11( I, d 11 1h ,., , I I
+' ' ' ·
+1
+s, ' 111 111111 .1 11 -.k ills tll'l' still nuci.il.
+(. )1 ,11 11• I >1·1 l'IO p< •1/'.'tl(}(l Fl. . .
+<
+1111
+rt s 1. 111 h(• 11 1-,1•d lo rr1•t1l1• dc1l,1 <·ntry screens and menus, but i ,111 ,llsn hv 11s1•d In st lrl 1
+. , . · · ' I rogr,1111:-. t1nd ollwr Dt'V l'lopl'r tools and create database appli-
+1.1l1n11s I I / <;:, )J 11hr 1ri1•s (ol . . 11 sn
+' ·
+11
+'llS,l' l' • -JL cod1·) ,rnd objL•cl libraries can be used so that Forms
+h1•1·1111H•s ,l , 1,1 y powi•rlt I
+1
+1 ...
+•
+1PP 1c,1t1ons g1•1wr,1tor. Or,1clc Devcloper/2000 Reports enables
+11·p111t g1·1w1-.1t1on Sonw l'l'I) 1.1 . • l
+1
+. . .
+· (
+1
+s 1,111 1L' ll SL'L 1nleracl1vel y. The efficient use of Reports requires
+,1 gnnd h.11mvl1•d<>1• of SI )I O · ·I 1) I · ·
+n • '-.! ,. t,1L l' L'Vl' op1•1/2000 Crn ph1 cs 1s used to add visual 'splendour'
+tn,1rl'porlorform!\g1in th Ill I b · · · ·
+· ' , oug, 1l' rcsu ls may c user friendly, th eir creahon requires technii
+.ii l'\1'1'rlisl', though ov1•r 50 predefined chart templates arc provided.
+Oracle Developer Suite 1 Og
+1 lw Or,lcil' l'lllL'rpriSL' grid architecture was released in 2003 and is referred to as Oracle 10g.
+l'lw grid conCl'pl is 111l',rnl lo rt'pn.'senl the server and storage technology and tool support as
+one inlegr,1Lt•d pl,1lforrn. Wt• wi ll look al the Oracle Developer Suite lOg, which is part of that
+111iti,1livc ilnd is llw most re levant lo lhe subject of this chapter: what toolsets are available to
+support tlw pron•ss of dcvl•loping information systems, that is, tools which aim to make the
+de\ doper mort• produclivt'. IL consists of many tools covering most aspects of IS development,
+but these ilrl' inlt'gr,llt•d so that the components are ab le to ' talk' to each other as well as to the
+dt•vt'lorwrs in ,1 consislt•nt Wil)',
+The tools consist of:
+• Team support, which facili lilles communications between developers, for e:-.:amp le, consisll•
+nl soflwarl' configuration and version control between development teams;
+• J2EE programming, t•nabling Java design, programming and development, co, ering tht'
+full lift• cyde, intluding the generation of app lication code from tool -supported Ui\ lL
+dic1gr,1ms;
+• Reporti•n g, t o L'1I,, blt' ti ll' L' '1·s y crea ti on of reports baSL'd on difft•rt•nt sourcL'S such ,ls rl'l,1-
+t,onc1 I f1 I 1 •s. ,1 11uJ XMI ftli•s· ' 1nd ' using Oraclt' Disn>VL'rer, L'nd-usL'r l]lll'r\ 111g (till' L'nd-usL'f
+ll('l'd not, o f untrsL., knovv or underst,rnd tlw d,1l,1b,1sl' strudurL' ,1nd l>tlwr lt'l.'hlllc,11
+cl',Pl'lh, t IH HlgI) tiH ' lI' i l C ,b 't'S L' ' 1dm111i.,tr,1tor m•t>d-, 1111•11sun• l'nd USL'rs h.11 L' ,1ppropri,1tL'
+s1•1 unlr p111 il1•gl's), . .
+• Modt•ll·t.n g, to lw 1P 1I 1 1 , 1l l 1 >th•lling c111tl d1•sign of tlw ,1ppl11,1tion,, indudmg tlw dL'stgn .
+of tlw suppw ting t I d I ,1 I i, 1s 1• . , In un di.1g1,1111s ,111tl n•,·L•r~l' t•ng11w1•nng lt•g,irv d,1t.ib,1se
+applit,ilions lo till' Or,H It• .,1,1111l,11d;
+• Bus•i ness 1. 11te 111• gen ce , Ill -.uppmt tlw l'fll't ti, L' u~t• of org,rni✓.1tional knowledge by
+querying tlw d,1l,l l1 ,1',L,S . ,lnLi tlw dc1ta "' .uL•housL', indudmg end-user query and analysis
+372 Tools and toolsets
+features providing visual display of tables, cross-tabulation and graphical analysis, and
+there is also an Oracle Warehouse builder available for the design, population and management
+of the data warehouse;
+• Rapid application development tools, which along with reporting and modelling, are
+developments from earlier case and designer tools, for example generation of applications,
+including web applications, from forms for developers experienced in using
+SQL 2003; and finally
+• Web services development, for example, using forms to develop web applications. It
+also includes Oracle Designer, based on Designer, discussed above.
+Although the complete toolset is complex and expensive, it does provide a consistent and integrated
+package to try to merge fragmented heterogeneous and monolithic legacy applications
+as well as all aspects of IS development, including professional and end-user support so that
+developers, business analysts and others collaborate on rapid process development.
+19.4 Select Enterprise
+Select Software Tools was a software company that developed an early CASE tool that evolved
+over the years as a professional toolset which has also been widely used for teaching purposes,
+particularly in UK universities. Select is now owned by Aonix, and marketed by Select Business
+Solutions. Aonix is itself owned by the Gores Technology Group known for its Software
+through Pictures (StP) product. The product appears to have been subsumed into a number of
+other products, including Select Component Factory. Select Enterprise itself is still available in
+Europe and is described as 'allowing the modelling of complex IT applications before commencing
+development, uncovering costly problems earlier in the development life-cycle. It also
+acts as a store for intelJectual property, which is invaluable during system maintenance,
+improvement and integration. Select Enterprise gives you the modelling techniques to design
+the right system, and design it right' (Aonix, 2005). It is this product that we will discuss here
+as being most relevant to the subject matter.
+Select Enterprise is a much expanded version of the original Select tool, designed for
+object modelJing and supporting UML. Amongst other features, Select Enterprise has the following:
+• Business process modelling
+• UML profile
+• Graphical simulations of UML designs
+• Database modelling and code generation
+• Design patterns and optional component-based techniques
+• Scaleable Enterprise Repository
+• Intelligent document generation
+• Traceability and impact analysis
+• Java, Visua!Basic, C++ code synchronization
+• Integration with a range of other tools.
+Chapter 19 Toolsets )n
+\
+11
+.io; ·le t f:nterprisc there are a number of related products. For example, then.' is ii
+Rt" ll'Wer for Sc/eel C11terprise which locates errors in syntax and UML (Section 13.2); and St'it'cf
+SSA/JM ,ind elect Yourdon which support users of these information systems development
+methodologies ( ·ctions 21.1 and 20.2 respecti\ ely).
+The tools of the Select Enterprise product (Ver ion 6.1) are illustrated in Figure 19.3. As
+cc1n be seen, the repository is the centre of the system, which contains the various data store
+and usually resides on the ervcr. The repositon management tool is the Repository
+Administrator, which manages the data stores. The vlodel"- cighborhood is for managing the
+VMious models on tht· client workstation. The lcct Enterprise tool itself enables UML modelling
+c1nd morl'. lntl·grated with l'll'ct Entc·rpn.,c are a numbt•r of othl'r tools, for e,ample, the
+/Joe u rrn•nt C ,l'nl•rc1tor for l rc•ating pn·.,ent,1t1nn., from mod •Is and the \tlodel opy tool which
+t11p1c•s di,1gr<1ms ,llld othvr ill'ms 11l'l\\'l'l'l1 modC'ls.
+'J lw Sc•k· t l· ntc·qHi.,c· u-.c·r inl<·rf,H , (hgun· 19~1) h,,.., f11ur '>l'p<1r,1te .Hl',h or windows:
+• 'J lw Explor •r w1ndm, (ldl· h,111d -.idl') 0111.iin., fold •r., . flwr • ,ire four sl'ls of folder.,
+<1v,1il,1hlc· in this\\ 1nd11w ,llll'.,!-.t'd hy v.ir111us l,lh ( 1·v bott11m 11f window):
+di,1gr,1m typl'" wilhin tlw mode·! (lhi-. 1,1h d15pf,1yt·d) (i .1•. l'ro<l'S" I lil·r.ir1.:h Di ,1gr.ims,
+l'n>ll'"S ·r hn•,1J IJ1,1gr,lllb, L'-.l' ( .. .,,. ( )i,1gr,1n1s. l'lt .);
+Jillinn.1ry ilL'ln!-. \\ 1lh111 till' moch•l (,> l11ldt•r for t·,11.:h itl•rn);
+G-•lc-1
+jPpA,r JQ!rgdBp jpwrpdQn ~ ~ (U.e c.,, 0...,..,1
+-2()0......
+....,. 19.3: Select user interface
+374 Tools and toolsets
+- relationships which show i'lssociations bl'lwl'l'n tliclionc1ry items and their hierarchies;
+e-help contents.
+• The Output window (lower left) which hm, the following labs:
+contents displays detai ls of the curren tly seleclctl diagram or item in the Explorer
+window; this tab can be used to navigate through the models;
+- results displays the model objects according lo the previous action performed;
+output displays textual information (e.g. res ults of a consis tency check).
+• The Diagram window (main) displays the selected diagram (a use case in this example)
+and is used lo create, edit, and genera lly manage the diagrams.
+• The Property page (lower right) displays properties for the currently selected diagram;
+the tabs available depend on the actual diagram selected.
+Figure 19.4 shows the Tools menu, which gives an indica tion of the various tools and features
+available in Select. The Bridge tools interface with other products (e.g. Platinum's ERwin and
+Mercury's TestDirector).
+The Repository Administrator window is illustrated in Figure 19.5. ft is accessed from
+within Select via the Tools menu (Figure 19.4) and is used to create, s tart, and stop data stores
+(a data store has to be started before it can be used) and backing up and recovering data stores.
+AA·ih¥tt¥hltH:ffifflft#t1$!#i4i®Ml■Ji.Uif ►i#fli·lri
+0 Fie Edt View T oob O~an Window Het>
+Djlii:j -1.J.!
+.h!-+I
+~ ~,□,-llj
+lll"ll!al
+<.!:-...] ProoettHa,
++ ..:J Piocen Hn:
+.-.. _J Ute~Oi,
+Etc ...J Cla:tD~«
+- ~o,-eou
+it< ....J ObtectSec,.,i
+ffi :_JTM:ileReiaoc
+Fl :..J S1ateOiog1a,
+@ Set:taon
+~ _J GenerlllG1aJ:
+,o, _J Teict.Ola!J«r
+:,,.. _J AJ0ltJll)llll'l'IS
+Datal),peCorl'mlel
+fltemalltems
+Report\11,u.
+T~Edi.of
+a.....,
+~
+S~Ob,ect~
+So.t Bridge -Pi.dish no SCM
+SD,1 81,dge · ReiJtt !tom SCM
+SCM Budge -Update Witt) letet vers.on
+SCM 81idt)e · Updel,e Wffil~oo
+CS,nc
+Select Oocurien1 Geneiato,
+Repottro,yA.d-rrrrtrata
+Selecl ERwriAJFo,wa,dGeneratot
+Se!oa ER...;ll} Reven• E,...._
+SelectlOLGene.ator
+Select!tt019 Mapp.
+Seloct.ModefCop,;
+SE Bridge Enteri:,ise lo SE
+SEB,dge · SE to EMpnw:
+SelectSOLGene.iator
+Select TestO,eotor Br6;1e
+~□ ... #fOr- n,A,1 \'Ho\:>
+I(?
+j flr,; I PqAei, I CNroec:fBr j QwmdQn
+!ID ea,.,,, Ji, """' Ii, """' 2 RI o~"'
+t..M,diot Seed IDL G-ata
+Figure 19.4: Tools menu
+* ~2!1
+~2!1
+Chapter 19 Toolsets 375
+fl.a
+D ~J ~l<J ..:±.!] ~ ~[iii~ GIK!tt?I
+iL I I I I fioci%3®.le.lrnl ~
+~ IB!jd-11'.l.J Elj!:ljl'IIEl -l.2J.1.1
+~J
+• .:] Pro SN'ffl Q.,iast01e Vaew T OOs Help
+: tl ~: ~ £tl.!1!m ~lt•I • I I>'> I ~l~t~l~l~l .r~ .lllil ~
+~ 3 :;1: I . -- . Models - Datastorc de tails · · · · i 0;-:;.. ~:;, Geneto11, ... ond 01eol01oe,j O.,..otionol P"amet°',j
+,tl 11 Li"°""' cutogl Namoc jModol1 Sl1'o .-,,,.,-,ed-..--- <US
+.Alli.!
+' ..J Ob, culogl T)'lle 3 v .. ..,,, j3 040 2
+Show Servtce ScreenQ
+_] Tai
+"" ..J Sta
+.:J Ge,
+..] lo,
+·- _J AIi
+Code Set
+Oesaipbon
+.---1- - ,-, -3-. P01L j200'.l __
+c, ... oo Oato jFriFeb15 20:42.28 2002
+Sel- f' AccenA,at,1,D,eck r N.,..Chock
+r P\i>lic Reed p AlJ.anahc St«I
+r ID Chock r AMIO<e Loggr,o
+.:] gill •,1:--IEElil Conlom ol 'SOMCe Aeq.,e;- General I Cuuom I
+l Page Rel l Chonqed By l Owyed On ~ ~ js...,.,. Aeque,t
+j ~equesl ReceovedQ
+FaHet>. prenF1
+Figure 19.5: Repository Administrator Window
+Figure 19.6 shows a Class Diagram displayed together with some menus accessed with
+a right click on the mouse button showing the various options for Association, Aggregation, etc.
+The functions available depend on the item selected.
+Figure 19 .7 displays an example Sequence Diagram (see Section 13.2 for a discussion of these
+UML diagrams). Figure 19.8 illustrates the Object Animator, one of the facilities of Select. The function
+is accessed via the Tools menu (Figure 19.4) and it animates the object interactions that are
+defined in a Sequence Diagram. Graphically representing objects and their interactions helps users
+and others to understand the sequences defined in a Sequence Diagram. Obviously the dynamic
+interaction cannot be shown in a static screenshot, but in Figure 19 .8 the line made up of little squares
+has to be imagined moving from object to object, indicating the sequence of activities that occur.
+As a further illustration of Select, the UML diagrams of Section 13.2 have been generated
+using Select Enterprise (except the Activity Diagram, Figure 13.9, which was developed using
+Rational Rose).
+19. 5 Discussion
+We will now look at some of the potential benefits and problems that might accrue from using
+integrated toolsets. We begin with the potential benefits.
+376 Tools and toolsets
+Jb FW fdll V"'¥!1 l O('tl D 'IOI~ \lln1oW H~
+o~ ...l!QJ. 1x • J.r·l ~-~ ,~r~ra- -.,JaLl\7J
+~ L l r,;;·-·l'·iLt=l.tral [t;JJ
+~ ~..,il uLoL\'L[IJJ_g,_J o)LQJ.±L.:.J -o-.l!J.: •J •121
+.!llml
+• W flro«.u H•~~• Oiagll'N
+• J Ptote-:: lhNdDllll,J.-n1
+~ U:fl C.-~ Ch.,i;,¥m
+!b Utt Caif't MNW
+_J 0-'1 Dia,;,.,,..
+.11,--.i..,,,
+Jl,lnt!'i'l~Layet
+..J Obied ColaboiatlOr'I Ow,gietm
+,tlAlMSeNIQn
+d End St'UIOn
+d Seivu-A~sl d StartSt'UO'I
+- .JOb,ec.15~01-,gtMtt
+Q-1 ATMS....,.,
+t}1 EndStu,on
+Q-1s.._A...,..1
+Q-1 Shoo,8'""""
+tl:1 Si,,tSoum
+Q-1 W<hdrow C<nl,
+-.QT~RelaboruhtpsOiog,e1nt
+·- ~ Stale Oiogorrri
+® S""'°"
+.. ~ G~alGr~Oi.eqM'II
+,. ~Te>&101aoj,1'"'1"1S
+'-+ :.J Al 0~""'4
+P.]o,ag ~De r'.\Ao! 'YHelp
+-,.. ... _
+":-::-~ 1 ~..;I (.._. , ■0di~ .~.= "· -.......,, . - _-,._
+,.-..~........~.. _. ,-~,..,,.
+..,
+~·
+Lrh
+A .... I
+Tod,
+O~ehamModel
+! Pao,Ael ! ChongodB, ! ChonoedOn
+Figure 19.6: Select Class Diagram
+F I A.U OC..,.IOr'I
+► A,n~ion
+GflnN.-.Zbim
+Re.,,..totlOP'I
+.N1,o;e
+Ope,ahon
+Stltlfl0LbQlom
+Gone,~ ! C:U.tam I Op0om I ........,ed llemt I
+EJ ATM
+FtJname f6TMM..,,4,,,.o,w~ 6TM
+1 Improvements in management and control
+Applications development, particularly for large projects, is inherently difficult to manage and
+control. The process must therefore be tightly managed, and the IT profession has not historically
+been very good at this, particularly in the areas of estimation and keeping to budgets and schedules.
+Toolsets can help in this process by providing a central repository of information concerning the
+project, including rules and standards to be followed, and experience from other projects, such as the
+length of time certain activities actually take in the organization. They can also help with estimation,
+risk analysis, project planning, and the monitoring of project progress. Particular support for techniques
+may be included, such as function point analysis, CoCoMo, PERT, and critical p,1th analysis
+These were discussed in Chapter 14. Toolsetscan also structure the wort-. of devl'lo~wrs; forl•,ampll',
+by handling the devolvement of tasks to developers so that work can bl' compldL'd in parallel ,ind
+the subsequent recombination of the work put into a coherent whole. Tlwy r,111 also support the
+change control process and ensure that ,ww versions and rl'il'<1Sl'S Ml' Wl'il organiJ'ed and man,1ged.
+2 Improvements in system quality
+The problems associated with specifications have already been discussed. Lt is argued that tools
+can help overcome these problems by providing better and more complete specifications
+• J~H"""""'Q'O!J_,.,
+• -T"-!O..,.am,
+- u u ... c:a...ow,g,...,.
++ ::Jo.nD,,g.....,
+• ::i Ot,.d Colaba-. D'O!J...,,
+: :::J Oti,ecl s........,., Dw,g,....,
+t?-1 ATM S.S..,.,
+Qi ErdS.....,
+~s......,.A......,
+~ Stio..B.mce
+trs,..is.....,
+viW-Casn
+• CJ Table~ Di.,,;,...-..
++- ~ StateO~ ams
+• G ..... .iGr...-.csO"'!Jam,
+'c ::.J Te,t Dw,g,ami
+± CJ AID,agam,
+!.'ii 01ag. ~ Dre. ra Rel \' H.-,
+Figure 19. 7: Select Sequence Diagram
+,=.::i"""'
+Rlc.tflil• Clstt R.qua1
+ShowEnt111: "mo,....tScr" n
+G• R~111St•d Affi«.nt
+C:Mdo:r or "••l,t,lifunds
+G1tFwidl A.w.at.t. RHJ,t'Mi
+hf'vn,s.._,,~•laiii
+Otq) 1rgC.ast,
+... RitCOfdTr~on
+.....E ndS11:Ao11
+Chapter 19 Toolsets 377
+P1oot1:JT11nudion
+EM Sasion
+through the use of diagrammatic representations that are easily modifiable by developers and
+users. These should also represent the real requirements better, partly because there is less
+resistance to changing diagrams because the tools make it easy.
+3 Improved designs, better reflecting the specifications
+Another problem of systems development is that the designs produced do not always accurately
+reflect the requirements specification. This can be the result of incomplete or conflicting
+information, and designers often make guesses or opt for whatever is the easy solution. Tools
+can help by providing the necessary information from the specification, having it available to
+designers from the repository, and by automating some of the process. This also helps to
+produce consistent designs, including that across applications.
+4 Automated checking for consistency according to the rule base
+Tools can automatically check the consistency of information input at the analysis and design
+stages, including information input using models and diagrams. They can highlight information
+that has been missed, areas that have been missed, interfaces that do not match, as well
+as incomplete information. This kind of automated consistency checking can be based on a set
+378 Tools and toolsets
+• ..J Proce,n H•a.
+• _J f'loc<tt!t, ...
+.+: ._J U~ Catt C\iao
+.. ...JC:Wsl>I.I\J,V!\S
+• _J Ot.,,ciC"""°'
+~ ..J O~SC!<Mn
+• _J T.i;,R....,..
+:. _J St&te()~a,,u
+• ._jGenl!!{.91G,~
+.. ..J T f'.ld Di-'94n'll
+. :.J AIO.ag«ni
+[illeoo ... , ~
+Fo, Het:,. press Fl
+Figure 19.8: Select Object Animator
+I
+I
+of rules concerning the methodology as a whole or those of the various diagramming techniques
+themselves. These rules would be included in the systems repository. Such checking
+should improve the consistency and quality of deliverables and thus the final information
+system, leading to less reworking and change at later stages.
+5 Greater focus on analysis rather than implementation
+It is often argued that the use of toolsets enables and encourages the focus of development to
+be changed from the later stages of the life cycle, such as design, coding, and implementation.
+to the earlier stages of analysis and requirements determination. Such a change of emphasis is
+likely to lead to better quality systems, as problems are detected and corrected c1t an earlier
+stage than with purely manual methods. The earlier in the development process that problems
+or errors are detected, the cheaper they are to correct.
+6 Enforcement of standards and consistency
+The use of tools can also hdp with the definition and l'nforccment of various standnrds in
+development. The tool itself often embodil•s cerl,lin conventions ,rnd stilndards that can help to
+ensure consistency in the development of individual projects and across different projects in an
+Chapt~r JQ 1ool~eh 379
+Prg,111 iz.i tion. l'lw tool 1111,, "llft)i·c, :1·, • 1. ,. . 1 1- i t, ,· •t\'lfl.'
+' . ' t.: l 1sc1p llll' l,) not allowing dL'\ dt,pl'rS t w l'l'l'< 1\lll t ~ '
+orninlr,n ·t' nc ct' rtain rull's or) :I .,. • · ti• ·•
+· , t t CCL lites, and stand,1rds. II c,111 ,1lsn L'nsun' l'l111s1st,•111·\' Ill h llSl
+of techniques' definitions' 'a n c:I tc,t. m m· o Io gy .1 11 the organi,rata. 1n. ,\ s \\'l'll ,1s 1•111· tw1·1· ng st,1n1i ,1ru, s·,
+they may ensure that the rules a d b' · · · ·
+c n o Jecttvcs ot a particul,1r 111tnrmt1ltn11 syst1•ms d1•vl'l,111nwnt
+methodology are fo llowed · Aga m· , th·1 s may be ach•ie ved by the tool mil ,1llow1·1 1g tlw d1'n'I t ip,•rs·
+the freedom to diverge from the requirements of the nwlhodnlogy ,md by the tt10I itsdf
+adhering to the methodology in what it does.
+7 Improvements in productivity
+Perhaps the most cited benefit of using tools is that of imprn\'ed prnducti, il) dut' It) a numbt'r
+of factors. First, it is argued that information systems arc dcvelopt'd morL' quicl-.ly than with
+conventional methods. This is obviously a very attracti\'e benefit, given the enduring prnbkms
+of systems development in this respect. Faster systems development is achieved by impron'd
+management and control, the ability to create c1nd change diagrams and specifications, ,rnd the
+a utomation and elimination of various manual stages, including the c1utom,1tic gcncr,1tinn of
+some aspects of design and the automatic generation of code. This latter benefit can potentially
+make a significant improvement to productivity, as the writing of code has always been a ,·en ·
+labour-intensive part of the development process.
+The second element is the ability to develop systems with fewer people. The automated
+support for much of the process and the automation of some tasks, it is argued, means that
+fewer developers are required. With fewer people, there is the added benefit that the number
+of interfaces and the communication required between developers are also reduced, which is
+also likely to enhance the speed and quality of development. The law of diminishing returns
+applies to systems development. This suggests that after a certain figure is reached, the more
+developers that are added to a project, the longer it will take to finish. This indicates that a !-.ind
+of inverted economy of scale may apply to systems development, because the more interfaces
+there are between people, the more slowly things happen.
+The third element contributing to improved productivity is the reduced costs of development.
+This is essentially an effect of the first two factors, that is, faster development and fewer people.
+A fourth element of improved productivity is the ability to reuse existing development
+objects. The information captured by a toolset over a number of projects may eventually
+provide a repository of models or objects of various kinds that can be used again. These may
+include analysis and design models of all types and libraries of common code that can be utilized
+in future developments. Depending on circumstances, these models may be used in their
+entirety or are amended according to the requirement of the new project. This can save a significant
+amount of development effort and help achieve consistency between applications as
+well, as the standards in the original models will be incorporated into the new developments.
+8 Reductions in maintenance
+It is argued that the use of tools helps reduce the large degree of effort required for both maintenance
+and enhancement of existing systems. First, they can produce good and consisll'nl
+380 Tools and toolsets
+documentation, which can lead to easier maintenance. Second, the better quality s .
+6
+.
+and analysis means there will be less change and thus less maintenance. Third thep e.c 1 Cation
+design and implementation, including some automation, results in fewer errors a' t the unproved
+ming, testing, and implementation stages, thus leading to less maintenance. prograrnAccurate
+and effective testing is also an important element in reducing the mam· te
+nance
+load. Traditionally, this has been carried out by a separate group of people because the developers
+themselves were not trusted to test a system that they had developed effectively.
+Programmers were thought to be the worst people to test their own systems, as they assumed
+the system would work because they had written it. The consequence of having a different set
+of people performing the testing is that they have no knowledge of how the system was developed.
+Further, they could not take advantage of any verification and validation potential that
+the development methodology might have to offer. Toolsets can provide this enhanced testing
+by helping to administer and control the activity and by generating test data, applying (or even
+simulating) it, and analysing and comparing the results. The type of test data generated can be
+derived from, and reflect, the requirements of the analysis and design stages. For example, if
+there is a requirement that when a particular process is invoked then a subsequent process must
+also be performed, then this can be captured as knowledge in the repository and a particular
+set of tests and relevant data automatically produced. An example may be that a debit from one
+account must be accompanied by a credit to some other account. Such testing is more likely to
+test the requirement effectively than random testing, and the benefits apply both to the initial
+systems development and any subsequent maintenance or enhancement to the system.
+Further, the traditional form of maintenance is made obsolete because changes are not
+made by directly reworking the code in response to errors and changing requirements, but by
+going right back to the analysis and design stages and amending the original diagrams and
+specifications and regenerating the code automatically. This helps eliminate the frequently
+encountered problem of introducing new errors as a result of correcting existing ones.
+9 Re-engineering ( or reverse engineering) of existing systems
+The problem in many organizations is not so much that of developing new systems, but the
+maintenance and enhancement of their old systems, some of which are based on 1960s designs,
+third generation languages, and dated file and access methods. Re-engineering is the application
+of tools, techniques, and methods to extend the useful life of application systems
+cost-effectively. Re-engineering changes the underlying technology of a system without
+affecting the functioning of that system. Therefore, for example, the hardware platform and
+environment, including the programming language of the applications to reduce maintenance
+costs, may be changed. The rapid developments in technology have rendered many existing
+systems, even some that are relatively recent, obsolete, not in the functional sense, but in the
+programming language used and the hardware on which the system runs. Such systems can
+carry a high maintenance workload and be difficult to enhance. Further, many manufacturers
+refuse to maintain old hardware, and it is difficult to integrate legacy systems with more
+recently developed systems. For many organizations, the cost and resource u· npI i ca tions of
+Chapter 19 Toolseo Jl1
+r.ippmg lh1•!st> 11ld s l , - J •
+Y1:> 1 m :, .iiH n·dc·v1-lopmg them from scratch on new hardw.ire platforms
+otilf L' pwl11hi11v ..· 'I hi' nr ' r 1 mc1 u.-.c of tools providc1, support for 'forward development', that is,
+1•' lup dr,wn, l1t11 •c1 r c11) r1rmch l th. d I
+' 0 c eve opmcnt of new systems Some tools arc designed to
+1..11p po 1I rl'V1•r!-.1 • i•nginc·t•nn,c.,, JS w c II , provi.di. ng the ability to capture the primary clements from
+lllr n •nt sy1,t,•1n s, s ue h ,is thc•1r proce•s s I og1·c and the data they use, .i ncluding entities, attributes,
+n,,,ru•s, Int ,dions source•<, ed ·t · • · . . .
+' , 1 cntcna, and rclat1onsh1ps. From th1!> captured information, the
+lool <<111 }wlp lo cl!'iln u P thc, d ala d c f'm 1.t.t ons, produce entity rnodeb, rcstn1cturc the process
+logtc and build pn,n-ss I1 ·11 •r drt h'i t•s, and cnn!>truct the repository for the t,ld systt'm. The tool can
+Hwn h1: ll !>c•d in tlw normd I fo n\. a rcI dt•vl'loprnent mode to produce new systems.
+10 Strategic contribution
+'I lw p11t1 ·11l i,tl for i11f1 ,rn1 , I t'1 1111 syst1·ms lo c nntnhuk IP tlw ,ll'hll'\'L•mcnt t1f thl' "tr,,tL•g1· c obJ·t 'L'-
+liVl'S of lhl' or" 1111/ 1t1 1, I I I I · · ,-,• • 0 i.1s )t•t·n c 1,;n1ss,·c ,n •r tinn •I 2, ,ind tlw use nf thcsl' to<)ls c-.,n hl'lp
+hy improving tlw qu,ility of :-yskms ,,nd tlw :-pwd ,it whkh thn<;t• "Y"ll'm" .Hl' dcvl'lopl·d ,md
+1•11h ,trH l'd, Addit1on,1lly, tlw pl,11rning l'lvnwnts of ,111111tq;r,1lt•d tool,;ct m,1y lwlp lo idt·ntify ,me.I
+primit1,:v I host• !>ystt•ms will< h .1r1· most likl'ly to I untnhlllt· ti, th,· businc..;s .,tr,1IL'~}'•
+11 Improved responsiveness
+'I hi!> is n•,11ly a lunl lion of 1mprovvd m,1inll'rl,1tll'l' ,ind t·nh,,nct•nwnt ol S}'"ll·ms th,1t h.tvc
+,1ln•,1d y lwt•n disl'ltsst•J, but thl• p.1rlil til.ir l'il•nwnt l.'lllJ'h,1si/1•J ht•rL· i., th,1t S)'Sll·m., dl'vclopt,-d
+using .i tuol ,in• ltkL•ly to bL• nHin• L',h,ih ,md qutl'kly t·nh,1nn·d lL',t<lmg to unpron·d rt~ponsive-
+1w.,s lo chan~ing and e,·ol\'lng bu!>int",., nel'd'i.
+1 2 Portability
+Many toolsets make it easier to move systems from one hardware platform or environment to
+another This 1s n•all) a function of the ab1lil) of some tools to generate code for a variety of different
+language!> on different hardware platforms. For a parti..:ular application, the code can be
+regenerated for a different en\lronmenl without affecting the funthonality of the application.
+While this makes 1t ea!>ier, ,t docs not in practice mean that there is no manual intervention
+required.
+1 3 Keeping up with the state of the art
+Some people argue that tools enhance the credibilil)' of the information systems group. It indicates
+to the rest of the organization, and perhaps the world at large, that they are at the cutting
+edge of the latest technological developments. This is perhaps not a totally justifiable benefit, as it
+b umen
+t for technology for technology's sake. A better justificahon is that it helps
+seems to e an arg
+d t
+. od information systems staff and increases satisfaction among developers.
+to attract an re am go
+Having identified the potential benefits of integrated toolsets, we will discuss the other
+. • The most obvious cost is that for the software and hardware which can be
+side of the equation.
+.
+1
+b b bly the more important costs are those associated with the adoption of
+ccms1derab e, ut pro a
+thc:.c tools:
+382 Tools and toolsets
+• Staff ed11cntio11 n11d tmi11i11g costs. These are costs that apply not only for the professional
+developers, but for users and user management as well. These costs are not just one-off,
+as is sometimes assumed, but are a long-term requirement, because of staff turnover and
+new versions of the tool.
+• Co11s11ltn11cy n11d tmi11i11g costs. In some cases, the training may only be available from the
+vendor, and vendors may make most of their profits from consultancy and training. An
+associa ted problem relates to staff turnover, which tends to increase as experienced tool
+users and deve lopers are currently much sought after.
+• Develop/lle11t of npproprinte co 11dition s. The setting of standards, working practices, and the
+resolution of confli c ts all need to be sorted out, and an appropriate environment and
+culture for the use of the toolset developed. Again this takes time and effort and is an
+initial cost of adopting a tool.
+• Integration of th e new tool. The toolset needs to be integrated into the existing development
+environment so as not to cause conflict. It is very unlikely that any organization
+will be able to change to such a development environment except in well-thought-out
+and managed stages. All this may require organizational change and will certainly take
+management time and effort.
+• Customization of the tool. There can be quite a major effort required to tailor the tool for
+use in the particular organization. This will take time and other resources, and systems
+support and consultancy from the tool vendor, which may be expensive.
+• People's time. Often the time of people using toolsets is not properly costed, as time is
+often assumed to be free and to have no opportunity cost. For example, if someone goes
+on a course, the cost of the course is usually included but not the time lost by that
+person. The time put in by users is also frequently ignored.
+• The cost of recruiting experienced staff Probably an organization will not train everyone
+from scratch but will seek some developers from outside who are experienced in using
+and managing the toolset. Recruiting costs can be particularly expensive as these staff
+are in demand.
+• Other hardware costs. It is frequently the case that the hardware needs upgrading and
+more workstations are required as more projects are developed. Again, these costs may
+not have been included in the initial estimates.
+Far too many organizations have ignored the softer costs in their cost/benefit analyses and concentrated
+solely on the direct hardware and software costs associated with integrated toolsets.
+The former can easily amount to two to five times the amount spent on the tools themselves.
+The evaluation of costs vs potential benefits is difficult, and the whole area of toolset use
+is surrounded, as are many IT developments, by a degree of 'hype', much of it emanating from
+vendors trying to market their products, but also, perhaps, from overenthusiastic developers
+seeking quick solutions. The IT community is characterized by the greeting of new approaches
+and products with great enthusiasm and a belief that, contrary to previous experience, this
+latest innovation is going to solve all known problems. Inevitably, there is then a backlash
+Chapter 19 Toolsets 383
+against thjs overly optimistic vi d ·
+ew, an a certain pessimism sets in whereby people begin to
+condemn the innovation as eitl1 · · er worse ilian useless or nothing new and simply 'old wine m
+new bottle '.
+Organizations iliati·ump O th b d . . . .
+n e an wagon, expecting a panacea, experience difficulties
+and problems. They then turn · th • ·
+agamst at particular innovation and vehemently condemn it
+before rushino0- on to ilie next o Th · · · · · ne. e truili wiili any mnovation is usually somewhere m ilie
+middle of the two exh·emes W h 1 d · · ·
+· e ave a rea y seen evidence of a backlash. Trus is perhaps not
+al to0o -ether surprisino- consi·derm· f ili h o g some o e ype; for example, one vendor suggests that productivjty
+of 25 times iliat of traditional development can be achieved with their product.
+There are furilier concerns related to ilie particular context of this book. The first is iliat
+the technology of such toolsets might distract people from the real issues of information
+systems development, iliat is, a concentration on ilie tool rather than fue development approach
+fuat lies behind the tool, and as a result fue tool being used indiscriminately and inappropriately.
+Second, the tool may force people to use some mefuods fuat are not relevant or well
+enough defined. It has been suggested fuat tools are sometimes purchased and used wifuout
+enough thought being given to fue processes fuat fuey enforce. In other words, the tool enforces
+a particular approach to systems development, and it is this approach that needs to be carefully
+considered rather than fue look and feel of the software. Some companies have found themselves
+implementing a particular development methodology wifuout quite realizing it, due to
+their use of a particular tool. A furfuer issue is fue degree to which fue methodology is supported
+and the way the support is implemented.
+The evaluation of any toolset is not a simple process, and the statement fuat a toolset
+supports a particular mefuodology is only fue beginning of fue story. The way in which fue
+rules are enforced is also critical. A further problem is fuat fue vendor may interpret fue rules
+of the methodology somewhat differently to fue author of fue methodology or the organization
+adopting the tool.
+Whatever the degree of improved productivity claimed, fuere appear to be a growing
+number of indications that achieving fuem is more difficult, and takes longer, than might be
+thought. The le arm•n g period for most toolsets is long. Bofu developers and users need time to
+learn, assn. n1.1 a te, and become effective in using fue tools. In terms of productivity, it has been
+suggested fuat th e 1e arn ing curve (productivity be. nefits plotted against ti.m e) may fall in fue
+early stages. The Ie ngt h of this early stage, before improved performance 1s reached, has been
+estimated to be between si•x monfus and two years. It perhaps makes more sense to measure fue
+. not in time, but in terms of numbers of projects, in which case it
+length of the learrung curve,
+h •t • not until the third or fourth project when productivity benefits
+has been suggested t at I is . . .
+1 t use is not an mstant panacea and some orgamzahons may not
+be in to accrue. Clearly too se . . . .
+g . f 1 -term in vestment that is required. The mtroductton of a toolset
+b ared for the kmd o ong
+e prep . d people's expectations relating to benefits, problems, and
+must be handled with care an
+. need to be realistically managed. . .
+timescales d t"on of toolsets is most successful when 1t 1s seen as part of a
+It i ht be that the a op I
+m g . fue culture o f an IT department, that is, when it is seen as a process of process of changmg
+384 Tools and toolsets
+organizational development. It may also be seen in the context of chan~inP· th, ,. .. .
+n n (' organization as
+a whole, perhaps empowering users or centralizing power. It may be analysed · t • ·
+' in erms of its
+effect on the hierarchical structure of an organization or as an element of onrc1nizc.1tio
+1
+.
+. . . . n' ·' n earning.
+The tools are not nnplemented m an orgamzat10nal vacuum, and there are many
+1
+·nd· .
+1cat1ons
+that success or otherwise is heavily influenced by a range of organizational and human factors.
+In essence, these are characteristics of the organizational fit of the tool, or, as it is sometimes
+termed, the compatibility of the innovation with its context:
+• the management approach;
+• power structures in the organization;
+• the degree of organizational creativity;
+• the organizational culture;
+• work patterns;
+• teamwork;
+• the incentive and reward systems;
+• perceptions of job security;
+• satisfaction levels;
+• the role of champions and sponsors;
+• change agents;
+• the history of innovation and experimentation in the organization.
+Another important aspect of the organizational dimension of analysis is the maturity of the IT
+department and the software development process in the organization. As we saw in Section
+4.5, there are a number of models of the 'stages of growth' of IT in organizations, and there are
+indications that certain stages of maturity need to have been reached to allow the effective
+introduction of toolsets. Further, the type of tool, and its objectives and justification, might be
+different depending on the stage of growth at which it is introduced.
+A further organizational dimension concerns the way that innovations are adopted and
+diffused in organizations. One strategy might be laissez-faire in which the tool is adopted
+without any deliberate organizational encouragement. A second is 'cautious', which is a slow
+but deliberate approach. The third is 'active', which is fast and requires a high degree of organizational
+and managerial push.
+They also identify three types of innovation in terms of the degree and nature of the
+change that occurs. The first is 'compatible' innovation if the tool fits in with and does not
+change current working practices, such as the methodology. The second type is 'incremental',
+where the tool involves only small changes to current working practices, and the third is
+'radical', if it requires major change and differs significantly from current e pericnces.
+A further dimension beyond that of the project is that of the individual affected by the
+tool. These individuals, or stakeholders, are, first, the developers (or the primary tool users),
+and their perceptions and feelings are important aspects in determining success. These perceptions
+can be analysed in relation to the degree of change to work practices, job satisfaction,
+reward, communication, teamwork, and so on. It has been argued that tools sometimes require
+Chapter 19 Toolsets 385
+the primary us •rs to unlearn old practi•c es and learn new ones and that this may result m· a pert
+ived lo s of s tatus. Further' the re are i•n dications that such c' hanges may be more difficult for
+older, more experienced develo pers to make. However, it is not always made clear whether
+these difficu lties are the result of the introduction of a toolset or whether it is due to the introduction
+of an associated method 0 1o gy. We suggest that the introduction of a tool together with
+a new methodology into an orga m·z ati·o n 1· s a more difficult innovation than the introduction of
+a tool to support an existing a n d we1 1 -establi· shed methodology, simply because of the greater
+degree of learning (and unlearning) involved.
+The reaction of individual d eve1 o pers 1. s not always negati.v e, as some percei.v e the use
+of toolsets as enriching their work • 0the rs percei·v e 1· t as d e-s k·11 1·m g, re d ucm· g th e1· r creati·v i·t y,
+and increasing the ability of management to exert control, m· much the same way that supermarket
+checkout sy terns monitor and control their operators. The reaction of individuals
+appears to b difficult to predict, but it is likely to b a key lement in the ultimate success or
+failur of the introdu tion of tool in an organization. The planning and management need to
+focus on addr s ing th s per onal p rception and motivation i sues.
+A s cond et of individual , who ar potentially a important as the primary users, are
+the secondary us rs, that is, the people who u e (or manage) the ystems that are developed with
+the tool. They may b involved in the developm nt process a well as being the users of the information
+system produced. Their perceptions of the tool, its impact, and effects are also important,
+although frequently forgotten. If the secondary users perceive that the tool results in better
+quality systems, or faster production of systems, or improved identification of their requirements,
+or enabling their greater participation, or whatever advantage, then this is likely to result
+in the organization as a whole regarding such tools in a favourable light. Of course, the reverse
+is also true. Unfortunately when tools are introduced there seems relatively little emphasis on
+involving the secondary users or recognizing them as an important component of success.
+19.6 Framing influences
+In Chapter 17 we looked at framing influences in relation to techniques. We argued, following
+Adams and Avison (2003), that the use of techniques may restrict p ople's understanding by
+framing the ways that they think about the problem situation because of the way that the
+problem is presented to them by the technique. In effect, techniques frame or blinker the way
+h
+. • the problem under review. We will not repeat the arguments here, but we
+t eir users perceive
+d h t th doph
+. on of techniques should be based on appropriateness to the problem
+suggeste t a e a
+. . h th be ause it J·ust happens to be part of a methodology being used or the
+situahon rat er an c
+. . d" "d
+1
+r organization. We also suggested that different types of techniques
+habits of them 1v1 ua o
+. d h t provide different perspectives to a problem situation.
+might be use toget er o
+t ly
+also to tools and toolsets, but sometimes even more so, because
+These argumen s app
+. t •n techniques on the user and limit choice to a small number of techtools
+may well impose cer a1
+. . h k e Most techniques offered in such tools and toolsets are closed
+niques offered m t e pac ag · . . .
+d
+few are non-prescriptive. We will consider some of the tools and
+rather than open, an very
+. y f m this perspective.
+toolscts discussed m Part ro
+, l11mt i ,Hl'.l ll 'l l Ii ,ti lll mi th t l , , , l l'l , ore- t ll' num 'r
+i. I ,, , nn1 k . It Ut ' ort .
+r r s f rl') t m Ill
+nti,m 1I ,,1ws tr' our , llll 1t1·,,1, t' t ,_
+• ' ' '• ,(' \\'01'11.s
+m• 'l'r\ ,trn tu, 'i ll hni 1u 's \\ ith m1 ut bl•in' l,h tu,,;
+nh r iq l'll kn1. i '', ,,,t It, ur •~ ,md tlw lik.l'.
+,l l' ,u h ., ... \ l ........ limit-.. th1.• lt-..l'I' t,, usin' tlw r1..•l.\ti,,n,1I d,1t,1b,lsl'
+tl 'u, r in t.1l ul 1r I, 1 m .md , ut1 ut i.., tlw usl'r in t,,t,td,n t,,rn1. 1\,t,,
+l in 'nll l\ -1 I ,ti ,n,hip Ill m. 1 lwrc ,\I\' ,p1.' 1111. ,, ,\\ ... th,11 tlw i.11,1 L,ln
+d.'\t ,l •''l' l lh ri , i. \ll till'"' Ill,\\ ,, 1..'II l ,· ,lf l r, l n,1k but b1.•1.·,n1s1.' 1.ll tlw
+imf 1 ·t tit.· t, l t ·nh.1lh· li mitin •. lnd1.•1. i it 1.,ltdd h,1\ 1..' ,, ,, ,,r-..,• 1mp.1d b1.'1.,1us1.'
+I , t if it b n ,1 l ......., jl 11.• ll rq , c ... ,·nt :-,mw ,,i tlw inf1.ll'm,1t1,m 111 tlw nll,1.h+,
+c1nd t' mi lt1 ... t : ... 1..' i l) lh1. h i.... l h, tl' ,ltl' thl \\ ,1, ... , hH 1.' ,llllf k , 1.ll rq r,• ... 1.•nt111g tlw ,1ppl1 -
+ali '11 ,,r 'l ,b .1 ri h l i hm..' .md th,• .._, ... km inkq 1 •t ing ,rnd 1.ltn 1.•rti11g it intl, ,\I\ \1.n•..,...,
+d,1t.,b.1:- '.
+Tlw lr.1win~ ~ .11.. .1 ~1.• \ 1-.. iL, i ,.._ ,llkr ,\ r.m '1.' llf dr,1win, p,l ...... ibiliti,•s, i111. lud111g tlw
+n11.)r1.. 1.'f n min l-m,1ppm~ t1.' hn1 qu1.' I l\' 1.' .1mplL'. I h"' ,,, L'I', nw--t l,i tlw 11.'1. hn1qul'" th,11 tlw
+dr.1win~ h ,1 , upf 1. rt-.. .11'1..' ,tru ·tu r1.' i L'lll'"', ,1h,ng with tlw llhH'1.' slru1. lt11 ,·d 1111.•llllld,lll,gk~ (:-1.'1.'
+Fi.;ur1.. , 1 .11 ,mi 1 . A).
+,r1. ui-.... s, -..km ... -..uppl,rt-.. ~rL'llF' dt:-- ·u ... stl)ll ,1nd L)f uHll'!-l' ~1\Hlp di:-;l ll:-O"illll" ,ll'l' f'llh'lltially
+L)P •n ,1nd un:--tru ' tll rLd l'ut u-..m~ tlw l,1 ·tl1til'" Lll <...,nlltp....,, -..11.'m-.. ,md :-i mil.,r gwupw,lt'1.'
+may impl ::-1.: 1-...,1. h.'n t1,1lly un(k:--1r,1bll :-trudur1.: ,111 i r1.:•du ·1.' fll, 1b1ht) . ::-.; '11'll' 1.,1 till' :-1- lll1l,11wil)
+and p(lt ntial h,1n~L-.. 1..)f dir1.:' ·ttl)n f ll:-.:-.ibk, in .1 fa ·1. -tl,-t,1 'L' 1111.1.:•tinF, m,1\ b1.' n.•~trkll'd in .1 u,mputer-
+t.1e1ht.1k' i I11Ll..'ti n••.
+:onw t1. l 1.. . 1.: h ,1r1..' d1.:•....,1gn1.:•d h)r u-.,1.' ,, ith ,1 p.1rtt ·ul,1r ml'llh,lhll,)~y. lnform.1tillll
+Engineering Fa ·ilit) prlwtdL'...., -..ud-1 ,111 l''\,1mpk' Thi::. 11111- lhL'" mtKh lm tlw u-..,•r l1.'rt.1inl)
+restricting th ran~1..• L)f tL-1.. h111q u1..•-.. Ill b1.:· ti.....1.•d but p1.:•rh.1p:- ,1i...,, th1. ,, ,l\ in,, ht~ h th1..'\ ,Hl' u:-l'd
+and when the, .u1.:' used \utl,m,1tmg ,1:--p1.' h l,t tlw mh,rm,1l1l,n ::.\ :--ll'm-.. d1.:•, 1.'lt,pnwnt t,1-,t._
+en ~n further b, u::.mg r,K k' [ L'"1g1wr ,md D1.:, L'll,p1.'r l,r SL'l1. ·t l~nkrpn ..... 1..' ILH. 1.' ,1111pl1.' c,111
+in1po technique~ l)l1 tlw u::-1.:' r-.. wlwtlwr th1.:'\ ,HL' ,n, Ml' 1..lt this r1.:'stridtl)ll L)\" rwt Tlw, m.1, b1.'
+frtL trated if they think. alkrn,1tl\ 1.:' kd1111qu1.:':,; ,, ould bt' nll,r1.:' ,1pprt,pri.1lL'.
+sers ne d to be aware of the nstri · tiL)ns th,1t tl.ll,b ,md lL'chrnqu1.:'~ 1mpLl~1.' tm tlwm ,rnd
+are therefor r ommended to use ,1s wid1.:' .1 r,mge of tt.'chmques as k,1::-iblt• if ,1, ,1il,1bl1. "ith till'
+tool or eYen to go outside this range when~ those pn)\ ided ,1r1.:' tl)l) limitin~ .. \ b,11,1111.'1.:' l)f t1.-chniques,
+coYering both the open and d1.)sed paradigms and pre~cripti, 1.:' ,md rH1n-pr1.'~ ·nptn l'
+paradigms, i recommended.
+• A toolset 1s am inte~1atc.'d compute, ~ol t\va,e
+~vs tern that 1~ spec1t1calh de~1gncd to suppo, t a
+s g" • ~a"'t pv t of the 1nfo1mat1on ,vstems developll'ent
+pro1..ess of an information system and the
+rnJ '3.Se'Tlern ot these tasks and processes
+• A repos1tor} contains 1nfo1mat1on about the
+ph\srcal and operational elements of data and processes.
+t \\ rll also hold the rules of a technique or
+an 1nformat1on systems development methodology
+thus permitting analysts, validation. consistency,
+and coripleteness checking.
+In this chapter we looked at three commercial
+toolsets and discussed some of the potential benefits
+and problems that might accrue from using
+integrated toolsets
+Chapter 19 Toolsets J87
+Questions
+1. If you have access to one of the toolsets disaaed a.i
+this chapter (or an alternative), use it to draw some lndvidual
+diagrams, for example those of Question l In
+Chapter 18.
+2. Use the toolset to develop a small part of a system
+Identify how the models integrate and how cf-.es In
+one model are reflected in others.
+3. Does the toolset follow the 'rules' of a particular
+methodology?
+4. Can the toolset be customized to adapt to alternative:
+- methodologies:
+- models:
+- notations?
+5. What are the benefits of using this particular toolset as
+compared to the theoretical benefits identified in the
+chapter?
+Further reading
+Allen. P. and Frost, 5 (1998) Component-based De\elopment for
+Enterprise Systems: Applying the Select Perspective (Managmg
+Ob1ect Technology Series No. 12). Cambridge Uni,ers1t Press
+Cambridge.
+Stone, J (1993) Inside ADW and IEF The Promise and Real rv of
+Case, McGraw Hill, New York
+Stowe, MW (1999) Orocli? Dt!,t.'!ope, 2000 HandbooJ. Prentice
+H.ill. New j('r~ey
